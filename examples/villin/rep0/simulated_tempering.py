@@ -12,11 +12,11 @@ from src.openmm.simulated_tempering_module import generate_initial_trajectory
 # For reproducibility
 np.random.seed(0)
 
-inp_dir = '../input/'
-out_dir = 'output/'
+inp_dir = '/scratch/htc/fsafarov/2cm2_simulation/stmd/6_reps_stmd/input/'
+out_dir = '/scratch/htc/fsafarov/2cm2_simulation/stmd/6_reps_stmd/output/rep0/'
 
-pdbfile_solute = 'pdbfile_solute.pdb'
-pdbfile_water = 'pdbfile_water.pdb'
+pdbfile_solute = '2CM2_update_v2.pdb'
+pdbfile_water = '2CM2_update_v2_water.pdb'
 
 file_traj_water  = "trajectory_water.dcd"
 file_traj_solute = "trajectory_solute.dcd"
@@ -39,6 +39,6 @@ generate_initial_trajectory(
                                 minT       = 273,
                                 maxT       = 500,
                                 water_padding = None,
-                                water_box = [5.4, 5.4, 5.4],
+                                water_box = [8.4, 8.4, 8.4],
                                 platform = 'CUDA'
                             )

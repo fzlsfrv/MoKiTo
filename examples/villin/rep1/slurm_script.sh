@@ -11,5 +11,5 @@
 # Initialize Conda
 eval "$(conda shell.bash hook)"
 
-conda activate emma32
+conda activate /scratch/htc/fsafarov/openmm_ff
 python simulated_tempering.py

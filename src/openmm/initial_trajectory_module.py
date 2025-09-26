@@ -2,20 +2,22 @@ from openmm import *
 from openmm.app import *
 from openmm.unit import *
 from openff.toolkit.topology import Molecule
+from openff.toolkit.utils import get_data_file_path
 from openmmforcefields.generators import GAFFTemplateGenerator
 from sys import stdout
 import mdtraj.reporters
 import numpy as np
 from time import gmtime, strftime
 import copy
+import os
 
+#default parameters for the function (if input is not specified in the notebook, then the default values will be used)
 def generate_initial_trajectory(
                                 inp_dir  =  'input/',
                                 out_dir  =  'output/',
-                                pdbfile_solute = 'pdbfile_solute.pdb', 
+                                pdbfile_solute = '2CM2_latest.pdb', 
                                 smiles = None,
                                 file_traj_water  = "trajectory_water.dcd",
-                                file_traj_solute = "trajectory_solute.dcd",
                                 dt       = 0.002,
                                 Nsteps   = 5000,
                                 Nframes_solute    = 500,
@@ -74,7 +76,7 @@ def generate_initial_trajectory(
     log.close();
     
     # Load molecule files
-    pdb_solute    =  PDBFile(inp_dir + 'pdbfile_solute.pdb')    
+    pdb_solute    =  PDBFile(inp_dir + pdbfile_solute)    
 
     if integrator == 'langevin':
         integrator = LangevinIntegrator( T * kelvin, gamma/picosecond, dt*picoseconds)
@@ -90,11 +92,28 @@ def generate_initial_trajectory(
         forcefield = ForceField("amber14/protein.ff14SB.xml", "amber14/tip3pfb.xml")
 
         if smiles is not None:
+            os.environ["PATH"] = "/scratch/htc/fsafarov/openmm_ff/bin:" + os.environ["PATH"]
             print("smiles = ", smiles)
-        
+
+            # generate topology object from smiles info
             molecule = Molecule.from_smiles(smiles)
-            gaff_template = GAFFTemplateGenerator(molecules=[molecule], forcefield='gaff-2.11')
+
+            #assign partial charges for electrostatic interactions in the forcefield
+            molecule.assign_partial_charges("gasteiger")
+            gaff_template = GAFFTemplateGenerator(molecules=[molecule], forcefield='gaff-2.2.20')
+            
+            #attach the ligand forcefield template to the general forcefield object
             forcefield.registerTemplateGenerator(gaff_template.generator)
+
+
+        # if ligand is not None:
+        #     ligand_path = get_data_file_path(inp_dir + ligand)
+        #     print("ligand = ", ligand_path)
+        
+        #     molecule = Molecule.from_file(ligand_path)
+        #     molecule.assign_partial_charges("gasteiger")
+        #     gaff_template = GAFFTemplateGenerator(molecules=[molecule], forcefield='gaff-2.11')
+        #     forcefield.registerTemplateGenerator(gaff_template.generator)
 
         # Solvation
         pdb_water = copy.copy(pdb_solute)
@@ -105,7 +124,8 @@ def generate_initial_trajectory(
         # cubic water box with a minimum distance of 1 nm to the box boarders
         modeller.addSolvent(forcefield, 
                             boxSize = water_box,
-                            padding = water_padding, 
+                            padding = water_padding,
+                            ionicStrength=0.15*molar,
                             neutralize = True)
         
         pdb_water.positions = modeller.getPositions()
@@ -120,12 +140,14 @@ def generate_initial_trajectory(
         system = forcefield.createSystem(pdb_water.topology, 
                                          nonbondedMethod = PME, 
                                          nonbondedCutoff = 1.0*nanometer,
-                                         constraints = HBonds)
+                                         constraints = HBonds,
+                                         )
         
         if NPT == True:
             system.addForce(MonteCarloBarostat( 1 * bar, T * kelvin ))
-            
-        simulation = Simulation(pdb_water.topology, system, integrator, platform)
+
+        properties  = {'CudaDeviceIndex': '0,1,2'}
+        simulation = Simulation(pdb_water.topology, system, integrator, platform, properties)
         simulation.context.setPositions(pdb_water.positions)
         
         print(">> Molecule parameters:")
@@ -219,8 +241,8 @@ def generate_initial_trajectory(
     #if solvent == 'water':
     simulation.reporters.append(mdtraj.reporters.DCDReporter(out_dir + file_traj_water, Nout_water))
     
-    simulation.reporters.append(mdtraj.reporters.DCDReporter(out_dir + file_traj_solute, Nout_solute, 
-                                atomSubset=range(pdb_solute.topology.getNumAtoms())))
+    # simulation.reporters.append(mdtraj.reporters.DCDReporter(out_dir + file_traj_solute, Nout_solute, 
+    #                             atomSubset=range(pdb_solute.topology.getNumAtoms())))
 
     # Save velocities
     if save_vels == 1:

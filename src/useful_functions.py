@@ -1,5 +1,6 @@
 import os
 import warnings
+import re
 
 def read_dirs_paths(file_path, global_scope):
     """
@@ -43,24 +44,24 @@ def read_dirs_paths(file_path, global_scope):
     else:
         print("No variables were created.")
 
-def check_directories(out_trajectories1,out_trajectories2,out_trajectories3,out_trajectories4):
-    if not os.path.exists(out_trajectories1 ):
-        os.makedirs(out_trajectories1 )
+def check_directories(out_dir,out_trajectories2,out_trajectories3,out_trajectories4):
+    if not os.path.exists(out_dir):
+        os.makedirs(out_dir )
         os.makedirs(out_trajectories2)
         os.makedirs(out_trajectories3)
         os.makedirs(out_trajectories4)
-        print(out_trajectories1, "created successfully!")
+        print(out_dir, "created successfully!")
         print(out_trajectories2, "created successfully!")
         print(out_trajectories3, "created successfully!")
         print(out_trajectories4, "created successfully!")
     else:
-        print(out_trajectories1, "already exists!")
+        print(out_dir, "already exists!")
 
     if not os.path.exists(out_trajectories2):
         os.makedirs(out_trajectories2)
         os.makedirs(out_trajectories3)
         os.makedirs(out_trajectories4)
-        print(out_trajectories1, "created successfully!")
+        print(out_dir, "created successfully!")
         print(out_trajectories2, "created successfully!")
         print(out_trajectories3, "created successfully!")
         print(out_trajectories4, "created successfully!")
@@ -81,3 +82,24 @@ def check_directories(out_trajectories1,out_trajectories2,out_trajectories3,out_
 
     print(" ")
     print(" ")
+
+
+def get_latest_state_file(folder_path):
+    # Regex to match files like x0_123.xml
+    pattern = re.compile(r"x0_(\d+)\.xml$")
+
+    latest_file = None
+    latest_num = -1
+
+    for filename in os.listdir(folder_path):
+        match = pattern.match(filename)
+        if match:
+            num = int(match.group(1))
+            if num > latest_num:
+                latest_num = num
+                latest_file = filename
+
+    if latest_file:
+        return os.path.join(folder_path, latest_file)
+    else:
+        return None

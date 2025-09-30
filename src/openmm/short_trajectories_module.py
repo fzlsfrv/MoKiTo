@@ -14,8 +14,7 @@ from copy import copy
 def generate_short_trajectories(
                                 inp_dir   =  'input/',
                                 out_dir   =  'output/',
-                                out_dir2  =  'output/final_states/',
-                                pdbfile_solute = 'pdbfile_solute.pdb', 
+                                out_dir2  =  'output/final_states/', 
                                 pdbfile_water  = 'pdbfile_water.pdb',
                                 smiles = None,
                                 file_traj_water  = "trajectory_water.dcd",
@@ -27,7 +26,7 @@ def generate_short_trajectories(
                                 solvent = 'water',
                                 NfinPoints = 10,
                                 gamma = 10,
-                                T     = 300,
+                                T     = 310,
                                 use_initial_vels = False,
                                 integrator = 'langevin'
                                 ):
@@ -40,8 +39,6 @@ def generate_short_trajectories(
     
     # Starting points (number of files in input/initial_states)
     traj_water       = md.load_dcd(out_dir + file_traj_water, top=inp_dir + pdbfile_water)
-    pdb_solute       = PDBFile(inp_dir + pdbfile_solute) # this file is used to count atoms of the molecule
-    Natoms           = pdb_solute.topology.getNumAtoms()
     Npoints          = traj_water.n_frames
     print("Number of initial states:", Npoints)
     
@@ -68,7 +65,7 @@ def generate_short_trajectories(
     print("Friction:", str(gamma), "ps-1\n")
     
     # LOG-file
-    log = open(out_dir2                                 + "log.txt", 'w')
+    log = open(out_dir                                 + "log1.txt", 'w')
     log.write("Number of initial states: "             + str(Npoints) + "\n" )
     log.write("Number of final states: "               + str(NfinPoints) + "\n" )
     log.write('Timestep: '                             + str(dt)     + " ps\n")
@@ -83,10 +80,18 @@ def generate_short_trajectories(
     forcefield = ForceField("amber14/protein.ff14SB.xml", "amber14/tip3pfb.xml")
     
     if smiles is not None:
+        
+        os.environ["PATH"] = "/scratch/htc/fsafarov/openmm_ff/bin:" + os.environ["PATH"]
         print("smiles = ", smiles)
-    
+
+        # generate topology object from smiles info
         molecule = Molecule.from_smiles(smiles)
-        gaff_template = GAFFTemplateGenerator(molecules=[molecule], forcefield='gaff-2.11')
+
+        #assign partial charges for electrostatic interactions in the forcefield
+        molecule.assign_partial_charges("gasteiger")
+        gaff_template = GAFFTemplateGenerator(molecules=[molecule], forcefield='gaff-2.2.20')
+        
+        #attach the ligand forcefield template to the general forcefield object
         forcefield.registerTemplateGenerator(gaff_template.generator)
     
     pdb_water = PDBFile(inp_dir + pdbfile_water)
@@ -97,8 +102,6 @@ def generate_short_trajectories(
     
     
     print(">> Molecule parameters:")
-    print("Number of atoms (no water):", pdb_solute.topology.getNumAtoms() )
-    print("Number of water molecules:", int((pdb_water.topology.getNumAtoms() - pdb_solute.topology.getNumAtoms()) / 3))
     print("Total number of atoms:",  pdb_water.topology.getNumAtoms())
     print(" ")
 
@@ -128,7 +131,7 @@ def generate_short_trajectories(
             elif use_initial_vels == True:
                 simulation.loadState(out_dir + 'initial_states/x0_' +str(i) + '.xml')
                     
-            simulation.reporters.append(mdtraj.reporters.DCDReporter(out_dir2 + 'xt_' + str(i) + '_r' + str(r) + '.dcd', Nout, atomSubset=range(pdb_solute.topology.getNumAtoms())))
+            simulation.reporters.append(mdtraj.reporters.DCDReporter(out_dir2 + 'xt_' + str(i) + '_r' + str(r) + '.dcd', Nout))
             
             # repeat procedure for nsteps
             simulation.step(Nsteps)

@@ -14,7 +14,7 @@ from openmm.app import *
 from openmm.unit import *
 from scipy.spatial.distance import pdist
 import pdb_numpy
-
+import glob
 
 print(" ")
 device = pt.device("cuda" if pt.cuda.is_available() else "cpu")
@@ -51,13 +51,30 @@ def generate_PWDistances_torch(
         print(" ")
     
     # Starting points (number of files in input/initial_states)
-    traj      = md.load(out_dir + file_traj_water, top = inp_dir + pdbfile_water)   
+
+    # traj_files = glob.glob(os.path.join(out_dir, file_traj_water))
+    # traj_files = sorted(traj_files)
+    # traj_list = [md.load_dcd(f, top=inp_dir + pdbfile_water) for f in traj_files]
+    # traj_concat = md.join(traj_list)
+    # traj_concat.save_dcd(os.path.join(iso_dir, 'trajectory_water_all.dcd'))
+    # print("Combined trajectory saved as trajectory_water_all.dcd")
+
+    
+    traj     = md.load(iso_dir + 'trajectory_water_all.dcd', top = inp_dir + pdbfile_water)   
 
     Npoints  = traj.n_frames
    
     print("Number of initial states:", Npoints)
-    
-    _, _, files = next(os.walk(out_dir + 'final_states/'))
+
+    #get the final state numbers
+    final_dirs = glob.glob(os.path.join(out_dir, 'final_states'))
+    files = []
+    for d in final_dirs:
+        _, _, f = next(os.walk(d))
+        files.extend([os.path.join(d, x) for x in f])
+    files = sorted(files)
+
+        
     Nfinpoints = int(( len(files) - 1 ) / Npoints)
     print("Number of final states:", Nfinpoints)
     
@@ -87,10 +104,14 @@ def generate_PWDistances_torch(
     print(" ")
     
     if BB == True:
+        
         coor = pdb_numpy.Coor(inp_dir + pdbfile_water)
         bb_idx = coor.get_index_select("protein and name CA")
-        kb8_idx = coor.get_index_select("resname KB8")        
+        kb8_idx = coor.get_index_select("resname KB8 and not name H*")        
         sel_idx = np.unique(np.concatenate([bb_idx, kb8_idx]))
+
+        
+
 
         
         pairs   =   generate_pairs(len(sel_idx))
@@ -104,7 +125,7 @@ def generate_PWDistances_torch(
         #d0  =  md.compute_distances(traj.atom_slice(bb), pairs, periodic=False)
 
         d0 = np.zeros((Npoints, Ndims))
-        for i in tqdm(range(Npoints)):
+        for i in tqdm(range(10)):
             d0[i] = pdist(traj.atom_slice(sel_idx)[i].xyz[0,:,:])
             
         D0  =  pt.tensor(d0, dtype=pt.float32, device=device)
@@ -115,13 +136,13 @@ def generate_PWDistances_torch(
         print("Number of pairwise distances between ALL atoms:", Ndims)
             
         d0 = np.zeros((Npoints, Ndims))
-        for i in tqdm(range(Npoints)):
+        for i in tqdm(range(10)):
             d0[i,:] = pdist(traj[i].xyz[0,0:Natoms,:])
 
         D0  =  pt.tensor(d0, dtype=pt.float32, device=device)
     
     
-    pt.save(D0, iso_dir + 'PWDistances_0.pt')
+    pt.save(D0, iso_dir + 'PWDistances_0_1.pt')
     
     
     print('Shape of D0?')
@@ -130,37 +151,36 @@ def generate_PWDistances_torch(
     print(" ")    
     
     # Load one trajectory to calculate number of frames
-    print("I am creating the tensor with the final states...")
-    xt         =  md.load(out_dir + "final_states/xt_0_r0.dcd", 
-                                  top = inp_dir + pdbfile_water)
-    print("The shape of a file xt_i_rj.dcd is", xt.xyz.shape)
-    Ntimesteps = xt.n_frames
+    # print("I am creating the tensor with the final states...")
+    # xt         =  md.load(out_dir + "final_states/xt_0_r0.dcd", 
+    #                               top = inp_dir + pdbfile_water)
+    # print("The shape of a file xt_i_rj.dcd is", xt.xyz.shape)
+    # Ntimesteps = xt.n_frames
     
     
     Ntimesteps = len(frames)
     
     Dt = pt.zeros((Ntimesteps, Npoints, Nfinpoints, Ndims), dtype = pt.float32, device=device)
     
-    for i in tqdm(range(Npoints)):
-        
-        for j in range(Nfinpoints):
-            xt      =  md.load(out_dir + "final_states/xt_" + str(i) + "_r" + str(j) + ".dcd", 
-                                  top = inp_dir + pdbfile_water)
-    
+    for l in range(6):
+        for i in tqdm(range(Npoints)):
             
-            for k in range(Ntimesteps):
-                frame = frames[k]
-                if BB == True:
-                    #dt         =  md.compute_distances(xt.atom_slice(bb)[frame], pairs, periodic=False)
-                    dt         =  pdist(xt.atom_slice(sel_idx)[frame].xyz[0,:,:])
-                else:
-                    #dt         =  md.compute_distances(xt[frame], pairs, periodic=False)
-                    dt         =  pdist(xt[frame].xyz[0,0:Natoms,:])
-                    
-                Dt[k,i,j,:]  =  pt.tensor(dt, dtype=pt.float32, device=device)
+            for j in range(Nfinpoints):
+                xt      =  md.load(f'/scratch/htc/fsafarov/2cm2_simulation/md2/output_{l}/trajectories/openmm_files/' + "final_states/xt_" + str(i) + "_r" + str(j) + ".dcd", 
+                                      top = inp_dir + pdbfile_water)
+                for k in range(Ntimesteps):
+                    frame = frames[k]
+                    if BB == True:
+                        #dt         =  md.compute_distances(xt.atom_slice(bb)[frame], pairs, periodic=False)
+                        dt         =  pdist(xt.atom_slice(sel_idx)[frame].xyz[0,:,:])
+                    else:
+                        #dt         =  md.compute_distances(xt[frame], pairs, periodic=False)
+                        dt         =  pdist(xt[frame].xyz[0,0:Natoms,:])
+                        
+                    Dt[k,i,j,:]  =  pt.tensor(dt, dtype=pt.float32, device=device)
 
     
-    pt.save(Dt, iso_dir + 'PWDistances_t.pt')
+    pt.save(Dt, iso_dir + 'PWDistances_t_1.pt')
     
     print(" ")
     print('Shape of Dt?')

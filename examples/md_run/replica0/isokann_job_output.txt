@@ -1,0 +1,36 @@
+/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica0/isokann_2.py:129: SyntaxWarning: invalid escape sequence '\c'
+  ax[0].set_title('$\chi$-function')
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_0/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_0/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_0/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_0/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
+
+cuda
+torch.Size([1000, 10, 51040])
+  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 0/200 [00:03<?, ?it/s]
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica0/isokann_2.py", line 96, in <module>
+    train_LOSS, val_LOSS, best_loss, convergence = power_method(D0,
+                                                   ^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3.py", line 265, in power_method
+    train_loss, val_loss, best_loss = trainNN(net      = f_NN,
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3.py", line 125, in trainNN
+    optimizer.step()
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/optim/optimizer.py", line 485, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/optim/optimizer.py", line 79, in _use_grad
+    ret = func(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/optim/adam.py", line 236, in step
+    has_complex = self._init_group(
+                  ^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/optim/adam.py", line 180, in _init_group
+    state["exp_avg_sq"] = torch.zeros_like(
+                          ^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.85 GiB. GPU 0 has a total capacity of 39.39 GiB of which 1010.31 MiB is free. Including non-PyTorch memory, this process has 38.40 GiB memory in use. Of the allocated memory 37.85 GiB is allocated by PyTorch, and 55.18 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

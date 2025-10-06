@@ -3,6 +3,6 @@ out_trajectories1='/scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectori
 out_trajectories2='/scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/'
 out_initial_states ='/scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/initial_states/'
 out_final_states ='/scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/final_states/'
-out_isokann='/scratch/htc/fsafarov/2cm2_simulation/output_1/isokann/'
-out_mokito='/scratch/htc/fsafarov/2cm2_simulation/output_1/mokito/'
+out_isokann='/scratch/htc/fsafarov/2cm2_simulation/md2/output_1/isokann/'
+out_mokito='/scratch/htc/fsafarov/2cm2_simulation/md2/output_1/mokito/'
 

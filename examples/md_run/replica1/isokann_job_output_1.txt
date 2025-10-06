@@ -1,0 +1,164 @@
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/mokito/
+
+cuda
+torch.Size([1000, 10, 51040])
+  0%|          | 0/15 [00:00<?, ?it/s]  7%|▋         | 1/15 [06:54<1:36:42, 414.46s/it] 13%|█▎        | 2/15 [18:09<2:03:01, 567.84s/it] 20%|██        | 3/15 [31:35<2:15:16, 676.34s/it] 27%|██▋       | 4/15 [38:29<1:45:03, 573.07s/it] 33%|███▎      | 5/15 [48:10<1:35:59, 575.93s/it] 40%|████      | 6/15 [54:24<1:16:02, 506.98s/it] 47%|████▋     | 7/15 [1:00:08<1:00:29, 453.71s/it] 53%|█████▎    | 8/15 [1:08:19<54:20, 465.75s/it]   60%|██████    | 9/15 [1:17:43<49:38, 496.45s/it] 67%|██████▋   | 10/15 [1:24:21<38:50, 466.14s/it] 73%|███████▎  | 11/15 [1:30:26<29:00, 435.23s/it] 80%|████████  | 12/15 [1:40:07<23:58, 479.55s/it] 87%|████████▋ | 13/15 [1:56:08<20:50, 625.29s/it] 93%|█████████▎| 14/15 [2:03:25<09:28, 568.45s/it]100%|██████████| 15/15 [2:12:50<00:00, 567.45s/it]100%|██████████| 15/15 [2:12:50<00:00, 531.38s/it]
+ 
+Nepochs = 10
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.01
+Weight decay = 0.005
+Batch size = 200
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 10
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.005
+Weight decay = 0.0001
+Batch size = 50
+Patience = 5
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 10
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.01
+Weight decay = 0.0001
+Batch size = 100
+Patience = 5
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 10
+Nodes = [51040 34026     1]
+Learning rate = 0.001
+Weight decay = 0.001
+Batch size = 200
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 15
+Nodes = [51040 34026     1]
+Learning rate = 0.005
+Weight decay = 0.005
+Batch size = 100
+Patience = 5
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 15
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.005
+Weight decay = 0.0001
+Batch size = 100
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 5
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.001
+Weight decay = 0.0001
+Batch size = 200
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 10
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.001
+Weight decay = 0.005
+Batch size = 200
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 15
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.01
+Weight decay = 0.001
+Batch size = 200
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 5
+Nodes = [51040 25520     1]
+Learning rate = 0.001
+Weight decay = 0.005
+Batch size = 50
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 15
+Nodes = [51040 34026     1]
+Learning rate = 0.001
+Weight decay = 0.005
+Batch size = 200
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 10
+Nodes = [51040 34026     1]
+Learning rate = 0.001
+Weight decay = 0.005
+Batch size = 100
+Patience = 5
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 10
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.01
+Weight decay = 0.001
+Batch size = 50
+Patience = 5
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 10
+Nodes = [51040 34026     1]
+Learning rate = 0.01
+Weight decay = 0.0001
+Batch size = 50
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 5
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.001
+Weight decay = 0.0001
+Batch size = 100
+Patience = 5
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+The best hyperparameters are: None
+The best validation loss is: inf

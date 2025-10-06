@@ -1,0 +1,38 @@
+ 
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_general/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_[0-5]*/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_[0-5]*/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_[0-5]*/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output_general/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output_general/mokito/
+/scratch/htc/fsafarov/2cm2_simulation/md2/output_general/isokann/ already exists!
+ 
+ 
+ 
+This will create torch files containing PW distances using only BACKBONE atoms
+ 
+Number of initial states: 6000
+Number of final states: 10
+Number of atoms (no water): 4692
+I am generating the relevant coordinate...
+len(rel_coords)==2, then the relevant coordinate is a DISTANCE between 2 atoms
+ 
+Number of backbone atoms + ligand: 304
+Number of pairwise distances between BACKBONE+LIGAND atoms: 46056
+I am creating the tensor with the initial states...
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:02,  4.38it/s] 20%|██        | 2/10 [00:00<00:01,  4.39it/s] 30%|███       | 3/10 [00:00<00:01,  4.40it/s] 40%|████      | 4/10 [00:00<00:01,  4.40it/s] 50%|█████     | 5/10 [00:01<00:01,  4.39it/s] 60%|██████    | 6/10 [00:01<00:00,  4.38it/s] 70%|███████   | 7/10 [00:01<00:00,  4.37it/s] 80%|████████  | 8/10 [00:01<00:00,  4.37it/s] 90%|█████████ | 9/10 [00:02<00:00,  4.36it/s]100%|██████████| 10/10 [00:02<00:00,  4.36it/s]100%|██████████| 10/10 [00:02<00:00,  4.37it/s]
+Shape of D0?
+Npoints, Ndims
+torch.Size([6000, 46056])
+ 
+dcdplugin) detected standard 32-bit DCD file of native endianness
+dcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/calculate_PWDs-Copy1.py", line 45, in <module>
+    generate_PWDistances_torch(
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/openmm/PWDs_module1.py", line 163, in generate_PWDistances_torch
+    Dt = pt.zeros((Ntimesteps, Npoints, Nfinpoints, Ndims), dtype = pt.float32, device=device)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 102.94 GiB. GPU 0 has a total capacity of 79.15 GiB of which 77.71 GiB is free. Including non-PyTorch memory, this process has 1.44 GiB memory in use. Of the allocated memory 1.03 GiB is allocated by PyTorch, and 1.86 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

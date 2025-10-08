@@ -1,0 +1,133 @@
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
+
+cuda
+torch.Size([1000, 10, 51040])
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [10:50<7:03:05, 650.91s/it]  5%|▌         | 2/40 [33:59<11:27:11, 1085.04s/it]  8%|▊         | 3/40 [56:36<12:25:43, 1209.29s/it] 10%|█         | 4/40 [1:07:51<9:58:49, 998.04s/it] 12%|█▎        | 5/40 [1:29:57<10:51:10, 1116.30s/it] 15%|█▌        | 6/40 [1:45:18<9:55:00, 1050.00s/it]  18%|█▊        | 7/40 [1:53:07<7:53:07, 860.22s/it]  20%|██        | 8/40 [2:05:41<7:20:38, 826.21s/it] 22%|██▎       | 9/40 [2:20:40<7:18:37, 848.95s/it] 25%|██▌       | 10/40 [2:28:37<6:07:02, 734.09s/it] 25%|██▌       | 10/40 [2:28:59<7:26:58, 893.95s/it]
+ 
+Nepochs = 10
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.009
+Weight decay = 0.0005
+Batch size = 500
+Patience = 3
+Activation function = sigmoid
+Validation loss: tensor(3.5652, device='cuda:0')
+Convergence: -19.703701814619013
+ 
+Nepochs = 10
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.0004
+Weight decay = 0.0001
+Batch size = 100
+Patience = 5
+Activation function = sigmoid
+Validation loss: tensor(0.0047, device='cuda:0')
+Convergence: 1.329809597679469
+ 
+Nepochs = 10
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.009
+Weight decay = 0.0001
+Batch size = 200
+Patience = 5
+Activation function = sigmoid
+Validation loss: tensor(0.3826, device='cuda:0')
+Convergence: 0.28359746507297234
+ 
+Nepochs = 10
+Nodes = [51040 34026     1]
+Learning rate = 0.0001
+Weight decay = 0.001
+Batch size = 500
+Patience = 3
+Activation function = sigmoid
+Validation loss: tensor(0.0156, device='cuda:0')
+Convergence: 0.5703891873844417
+ 
+Nepochs = 15
+Nodes = [51040 34026     1]
+Learning rate = 0.0004
+Weight decay = 0.0005
+Batch size = 200
+Patience = 5
+Activation function = sigmoid
+Validation loss: tensor(0.0066, device='cuda:0')
+Convergence: 0.9487990497242419
+ 
+Nepochs = 15
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.0004
+Weight decay = 0.0001
+Batch size = 200
+Patience = 2
+Activation function = sigmoid
+Validation loss: tensor(0.1583, device='cuda:0')
+Convergence: 0.005451256262200127
+ 
+Nepochs = 5
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.0001
+Weight decay = 0.0001
+Batch size = 500
+Patience = 2
+Activation function = sigmoid
+Validation loss: tensor(0.1233, device='cuda:0')
+Convergence: 0.7158160222117331
+ 
+Nepochs = 10
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.0001
+Weight decay = 0.0005
+Batch size = 500
+Patience = 2
+Activation function = sigmoid
+Validation loss: tensor(0.0033, device='cuda:0')
+Convergence: 37.126086931427025
+ 
+Nepochs = 15
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.009
+Weight decay = 0.001
+Batch size = 500
+Patience = 3
+Activation function = sigmoid
+Validation loss: tensor(7.0004, device='cuda:0')
+Convergence: 3.229976082058674
+ 
+Nepochs = 5
+Nodes = [51040 25520     1]
+Learning rate = 0.0001
+Weight decay = 0.0005
+Batch size = 100
+Patience = 3
+Activation function = sigmoid
+Validation loss: inf
+Convergence: nan
+ 
+Nepochs = 15
+Nodes = [51040 34026     1]
+Learning rate = 0.0001
+Weight decay = 0.0005
+Batch size = 500
+Patience = 2
+Activation function = sigmoid
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica1/isokann_random_search_1.py", line 87, in <module>
+    best_hyperparams, best_val_loss  = random_search(D0,
+                                       ^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules4.py", line 195, in random_search
+    train_losses, val_losses, val_loss, convergence = power_method(X, Y,
+                                                      ^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules4.py", line 294, in power_method
+    slope = scipy.stats.linregress(old_chi, new_chi).slope
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/scipy/stats/_stats_py.py", line 10705, in linregress
+    raise ValueError("Cannot calculate a linear regression "
+ValueError: Cannot calculate a linear regression if all x values are identical

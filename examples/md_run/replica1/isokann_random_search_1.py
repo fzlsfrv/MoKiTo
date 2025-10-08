@@ -18,7 +18,7 @@ from tqdm import tqdm
 sys.path.append(os.path.abspath('../../../'))
 
 from src.useful_functions import read_dirs_paths
-from src.isokann.modules3 import *
+from src.isokann.modules4 import *
 
 # For matplotlib
 font = {'size'   : 10}
@@ -52,7 +52,9 @@ Nframes     = DT.shape[3]
 
 
 frame = 0
+# Dt = pt.clone(DT[frame,:,:,:])
 Dt = DT[frame,:,:,:]
+
 
 print(Dt.shape)
 
@@ -68,19 +70,19 @@ NN_nodes =          [(Ndims, int(2*Ndims/3), 1),
                       (Ndims, int(Ndims/2), 1), 
                       (Ndims, int(Ndims/2),int(Ndims/4), 1)]
 
-NN_lr = [ 0.01,
-          0.005,
-          0.001]
+NN_lr = [ 0.001,
+          0.0005,
+          0.0001]
 
 NN_wd  = [ 0.001,
-           0.005,
-           0.0001]
+           0.0007,
+           0.0003]
 
-NN_bs  = [50, 100, 200]
+NN_bs  = [100, 200, 500]
 
 NN_patience = [2, 3, 5]
 
-NN_act_fun = ['leakyrelu']
+NN_act_fun = ['sigmoid']
 
 best_hyperparams, best_val_loss  = random_search(D0,
                                                 Dt,
@@ -91,8 +93,9 @@ best_hyperparams, best_val_loss  = random_search(D0,
                                                 NN_bs,
                                                 NN_patience,
                                                 NN_act_fun,
-                                                search_iterations=15,
-                                                test_size = 0.2)
+                                                search_iterations=40,
+                                                test_size = 0.2,
+                                                out_dir = out_isokann)
 
 print("The best hyperparameters are:", best_hyperparams)
 print("The best validation loss is:",  best_val_loss)
@@ -103,6 +106,6 @@ print("The best validation loss is:",  best_val_loss)
 
 import pickle
 # Save to a file
-with open(out_isokann + 'hyperparameters.pkl', 'wb') as file:
+with open(out_isokann + 'hyperparameters_final.pkl', 'wb') as file:
     pickle.dump(best_hyperparams, file)
 

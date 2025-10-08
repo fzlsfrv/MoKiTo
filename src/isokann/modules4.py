@@ -4,6 +4,7 @@ import scipy
 from tqdm import tqdm
 import random
 from sklearn.model_selection import train_test_split
+import pickle
 
 # For reproducibility
 np.random.seed(0)
@@ -162,14 +163,15 @@ def random_search(
                     NN_patience,
                     NN_act_fun,
                     search_iterations=20,
-                    test_size = 0.2
+                    test_size = 0.2,
+                    out_dir = 'output/isokann/'
                 ):
 
     best_hyperparams  = None
     best_val_loss     = float('inf')
     best_convergence  = float('inf')
 
-    for _ in tqdm(range(search_iterations)):
+    for i in tqdm(range(search_iterations)):
 
         Nepochs    = random.choice(NN_epochs)
         nodes      = np.asarray(random.choice(NN_nodes))
@@ -205,7 +207,7 @@ def random_search(
         print("Validation loss:", val_loss)
         print("Convergence:", convergence[-1])
 
-        if val_loss < best_val_loss:
+        if val_loss < best_val_loss and convergence[-1] > 0.9:
             best_val_loss = val_loss
 
             best_hyperparams = {'Nepochs'        : Nepochs,
@@ -215,6 +217,11 @@ def random_search(
                                 'batch_size'     : batch_size,
                                 'patience'       : patience,
                                 'act_fun'        : act_fun}
+
+            
+        with open(out_dir + f'hyperparams_{i}.pkl', 'wb') as file:
+                pickle.dump(best_hyperparams, file)
+                
 
         del f_NN
 

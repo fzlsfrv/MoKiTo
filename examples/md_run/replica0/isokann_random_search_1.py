@@ -68,13 +68,17 @@ NN_nodes =          [(Ndims, int(2*Ndims/3), 1),
                       (Ndims, int(Ndims/2), 1), 
                       (Ndims, int(Ndims/2),int(Ndims/4), 1)]
 
-NN_lr = [ 0.01,
+NN_lr = [ 0.001,
           0.005,
-          0.001]
+          0.01,
+          0.003,
+          0.0001]
 
-NN_wd  = [ 0.001,
-           0.005,
-           0.0001]
+NN_wd  = [ 0.0001,
+           0.001,
+           0.0005,
+           0.00001,
+           0.000001]
 
 NN_bs  = [50, 100, 200]
 
@@ -92,7 +96,8 @@ best_hyperparams, best_val_loss  = random_search(D0,
                                                 NN_patience,
                                                 NN_act_fun,
                                                 search_iterations=15,
-                                                test_size = 0.2)
+                                                test_size = 0.2,
+                                                out_dir = out_isokann)
 
 print("The best hyperparameters are:", best_hyperparams)
 print("The best validation loss is:",  best_val_loss)

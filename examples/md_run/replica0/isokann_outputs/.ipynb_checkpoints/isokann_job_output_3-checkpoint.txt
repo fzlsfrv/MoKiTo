@@ -1,0 +1,4 @@
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica0/isokann_final_version_3.py", line 62
+    'Nepochs' = 20,
+    ^^^^^^^^^
+SyntaxError: cannot assign to literal here. Maybe you meant '==' instead of '='?

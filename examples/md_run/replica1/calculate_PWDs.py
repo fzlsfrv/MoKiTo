@@ -44,11 +44,11 @@ print(" ")
 generate_PWDistances_torch(
                         inp_dir  =  inp_dir ,
                         out_dir  =  out_trajectories2 ,
-                        iso_dir  =  out_trajectories1 ,
+                        iso_dir  =  out_trajectories1,
+                        out_final_states = out_final_states,
                         pdbfile_solute    = '2CM2_4884_v4.pdb', 
                         pdbfile_water     = 'pdbfile_water.pdb', 
-                        prmtopfile_solute = 'prmtopfile_solute.prmtop', 
-                        file_traj_water   = 'trajectory_water_combined.dcd',
+                        file_traj_water   = 'alignedtraj_rmsfit_CA_only.dcd',
                         frames     = np.array([0,1,2,3,4,5,6,7,8,9]),
                         rel_coords = np.array([[0,70]]),
                         BB=True

@@ -1,0 +1,14 @@
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_0/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_0/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_0/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_[0-5]*/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
+
+cuda
+torch.Size([40, 46056])
+torch.Size([10, 40, 10, 46056])
+torch.Size([40, 10, 46056])
+  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 1/200 [00:01<05:10,  1.56s/it]  1%|          | 2/200 [00:02<03:32,  1.07s/it]  2%|▏         | 3/200 [00:03<03:59,  1.21s/it]  2%|▏         | 4/200 [00:05<04:10,  1.28s/it]  2%|▎         | 5/200 [00:06<04:16,  1.32s/it]  3%|▎         | 6/200 [00:07<04:19,  1.34s/it]  4%|▎         | 7/200 [00:09<04:21,  1.35s/it]  4%|▍         | 8/200 [00:10<04:21,  1.36s/it]  4%|▍         | 9/200 [00:11<04:21,  1.37s/it]  5%|▌         | 10/200 [00:13<04:20,  1.37s/it]  6%|▌         | 11/200 [00:14<04:20,  1.38s/it]  6%|▌         | 12/200 [00:16<04:19,  1.38s/it]  6%|▋         | 13/200 [00:17<04:17,  1.38s/it]  7%|▋         | 14/200 [00:18<04:16,  1.38s/it]  8%|▊         | 15/200 [00:20<04:15,  1.38s/it]  8%|▊         | 16/200 [00:21<04:14,  1.38s/it]  8%|▊         | 17/200 [00:23<04:12,  1.38s/it]

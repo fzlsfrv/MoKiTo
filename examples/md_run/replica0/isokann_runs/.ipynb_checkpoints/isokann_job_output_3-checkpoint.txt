@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica0/isokann_runs/isokann_final_version_3.py", line 20, in <module>
+    from src.useful_functions import read_dirs_paths
+ModuleNotFoundError: No module named 'src'

@@ -1,0 +1,238 @@
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
+
+cuda
+torch.Size([50, 10, 51040])
+torch.Size([50, 51040])
+  0%|          | 0/50 [00:00<?, ?it/s] 
+Nepochs = 20
+Nodes = [51040 25520 12760     1]
+Learning rate = 1e-05
+Weight decay = 0.0005718571428571429
+Batch size = 500
+Patience = 5
+Activation function = relu
+Validation loss: tensor(1.5857e-05, device='cuda:0')
+Convergence: 0.940402265356233
+2025-10-09 14:21:45,655 Nepochs=20 nodes=[51040 25520 12760     1] lr=1e-05 wd=0.0005718571428571429 bs=500 patience=5 act=relu
+2025-10-09 14:21:45,684 Validation loss: 0.000016  Convergence: 0.9404
+  2%|▏         | 1/50 [03:13<2:38:18, 193.84s/it] 
+Nepochs = 15
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.00556
+Weight decay = 0.0004291428571428572
+Batch size = 500
+Patience = 3
+Activation function = relu
+Validation loss: tensor(9426971., device='cuda:0')
+Convergence: 0.39189269136466764
+2025-10-09 14:23:30,173 Nepochs=15 nodes=[51040 25520 12760     1] lr=0.00556 wd=0.0004291428571428572 bs=500 patience=3 act=relu
+2025-10-09 14:23:30,173 Validation loss: 9426971.000000  Convergence: 0.3919
+  4%|▍         | 2/50 [04:58<1:53:01, 141.28s/it] 
+Nepochs = 10
+Nodes = [51040 34026     1]
+Learning rate = 0.01
+Weight decay = 0.0005718571428571429
+Batch size = 500
+Patience = 6
+Activation function = relu
+Validation loss: tensor(1.8246e+08, device='cuda:0')
+Convergence: 7.347195028160428
+2025-10-09 14:25:47,670 Nepochs=10 nodes=[51040 34026     1] lr=0.01 wd=0.0005718571428571429 bs=500 patience=6 act=relu
+2025-10-09 14:25:47,670 Validation loss: 182457472.000000  Convergence: 7.3472
+  6%|▌         | 3/50 [07:15<1:49:18, 139.55s/it] 
+Nepochs = 15
+Nodes = [51040 34026     1]
+Learning rate = 0.0011200000000000001
+Weight decay = 0.0007145714285714287
+Batch size = 400
+Patience = 6
+Activation function = relu
+Validation loss: tensor(847.0170, device='cuda:0')
+Convergence: 0.040166011028462616
+2025-10-09 14:28:33,120 Nepochs=15 nodes=[51040 34026     1] lr=0.0011200000000000001 wd=0.0007145714285714287 bs=400 patience=6 act=relu
+2025-10-09 14:28:33,121 Validation loss: 847.017029  Convergence: 0.0402
+  8%|▊         | 4/50 [10:01<1:54:49, 149.78s/it] 
+Nepochs = 15
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.00556
+Weight decay = 0.0004291428571428572
+Batch size = 500
+Patience = 5
+Activation function = relu
+Validation loss: tensor(14020.0107, device='cuda:0')
+Convergence: -2.2973753240445136
+2025-10-09 14:30:54,487 Nepochs=15 nodes=[51040 25520 12760     1] lr=0.00556 wd=0.0004291428571428572 bs=500 patience=5 act=relu
+2025-10-09 14:30:54,487 Validation loss: 14020.010742  Convergence: -2.2974
+ 10%|█         | 5/50 [12:22<1:50:03, 146.74s/it] 
+Nepochs = 25
+Nodes = [51040 25520     1]
+Learning rate = 1e-05
+Weight decay = 1e-06
+Batch size = 100
+Patience = 5
+Activation function = relu
+Validation loss: tensor(0.0001, device='cuda:0')
+Convergence: 0.9994981561887684
+2025-10-09 14:32:36,104 Nepochs=25 nodes=[51040 25520     1] lr=1e-05 wd=1e-06 bs=100 patience=5 act=relu
+2025-10-09 14:32:36,104 Validation loss: 0.000138  Convergence: 0.9995
+ 12%|█▏        | 6/50 [14:04<1:36:21, 131.40s/it] 
+Nepochs = 25
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.00556
+Weight decay = 0.0004291428571428572
+Batch size = 300
+Patience = 2
+Activation function = relu
+Validation loss: tensor(36540236., device='cuda:0')
+Convergence: -0.19578481339059514
+2025-10-09 14:33:53,821 Nepochs=25 nodes=[51040 25520 12760     1] lr=0.00556 wd=0.0004291428571428572 bs=300 patience=2 act=relu
+2025-10-09 14:33:53,824 Validation loss: 36540236.000000  Convergence: -0.1958
+ 14%|█▍        | 7/50 [15:21<1:21:35, 113.85s/it] 
+Nepochs = 25
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.0033400000000000005
+Weight decay = 0.0002864285714285715
+Batch size = 500
+Patience = 5
+Activation function = relu
+Validation loss: tensor(3247587.5000, device='cuda:0')
+Convergence: 0.014110526840404756
+2025-10-09 14:37:24,921 Nepochs=25 nodes=[51040 34026 17013     1] lr=0.0033400000000000005 wd=0.0002864285714285715 bs=500 patience=5 act=relu
+2025-10-09 14:37:24,923 Validation loss: 3247587.500000  Convergence: 0.0141
+ 16%|█▌        | 8/50 [18:53<1:41:22, 144.81s/it] 
+Nepochs = 5
+Nodes = [51040 25520     1]
+Learning rate = 0.00889
+Weight decay = 0.001
+Batch size = 100
+Patience = 4
+Activation function = relu
+Validation loss: tensor(22791296., device='cuda:0')
+Convergence: -0.9635539805460849
+2025-10-09 14:38:28,562 Nepochs=5 nodes=[51040 25520     1] lr=0.00889 wd=0.001 bs=100 patience=4 act=relu
+2025-10-09 14:38:28,562 Validation loss: 22791296.000000  Convergence: -0.9636
+ 18%|█▊        | 9/50 [19:56<1:21:36, 119.43s/it] 
+Nepochs = 30
+Nodes = [51040 34026     1]
+Learning rate = 0.00889
+Weight decay = 0.0007145714285714287
+Batch size = 500
+Patience = 3
+Activation function = relu
+Validation loss: tensor(7.7908e+08, device='cuda:0')
+Convergence: -15.443937673657658
+2025-10-09 14:40:11,414 Nepochs=30 nodes=[51040 34026     1] lr=0.00889 wd=0.0007145714285714287 bs=500 patience=3 act=relu
+2025-10-09 14:40:11,415 Validation loss: 779075456.000000  Convergence: -15.4439
+ 20%|██        | 10/50 [21:39<1:16:12, 114.32s/it] 
+Nepochs = 20
+Nodes = [51040 34026     1]
+Learning rate = 0.01
+Weight decay = 0.0008572857142857144
+Batch size = 300
+Patience = 6
+Activation function = relu
+Validation loss: tensor(56942796., device='cuda:0')
+Convergence: 0.5869578770168207
+2025-10-09 14:43:11,260 Nepochs=20 nodes=[51040 34026     1] lr=0.01 wd=0.0008572857142857144 bs=300 patience=6 act=relu
+2025-10-09 14:43:11,261 Validation loss: 56942796.000000  Convergence: 0.5870
+ 22%|██▏       | 11/50 [24:39<1:27:20, 134.37s/it] 
+Nepochs = 15
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.0033400000000000005
+Weight decay = 0.0002864285714285715
+Batch size = 100
+Patience = 6
+Activation function = relu
+Validation loss: tensor(11.5186, device='cuda:0')
+Convergence: 102.09715947248691
+2025-10-09 14:46:44,640 Nepochs=15 nodes=[51040 34026 17013     1] lr=0.0033400000000000005 wd=0.0002864285714285715 bs=100 patience=6 act=relu
+2025-10-09 14:46:44,641 Validation loss: 11.518552  Convergence: 102.0972
+ 24%|██▍       | 12/50 [28:12<1:40:19, 158.41s/it] 
+Nepochs = 20
+Nodes = [51040 34026     1]
+Learning rate = 0.0011200000000000001
+Weight decay = 0.0002864285714285715
+Batch size = 200
+Patience = 2
+Activation function = relu
+Validation loss: tensor(0.1069, device='cuda:0')
+Convergence: 2139.468518288467
+2025-10-09 14:48:08,445 Nepochs=20 nodes=[51040 34026     1] lr=0.0011200000000000001 wd=0.0002864285714285715 bs=200 patience=2 act=relu
+2025-10-09 14:48:08,445 Validation loss: 0.106859  Convergence: 2139.4685
+ 26%|██▌       | 13/50 [29:36<1:23:44, 135.81s/it] 
+Nepochs = 30
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.00889
+Weight decay = 0.0005718571428571429
+Batch size = 500
+Patience = 3
+Activation function = relu
+Validation loss: tensor(9.5330e+09, device='cuda:0')
+Convergence: 3.3319958626065147
+2025-10-09 14:49:52,009 Nepochs=30 nodes=[51040 25520 12760     1] lr=0.00889 wd=0.0005718571428571429 bs=500 patience=3 act=relu
+2025-10-09 14:49:52,009 Validation loss: 9532978176.000000  Convergence: 3.3320
+ 28%|██▊       | 14/50 [31:20<1:15:38, 126.07s/it] 
+Nepochs = 30
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.01
+Weight decay = 0.0005718571428571429
+Batch size = 400
+Patience = 5
+Activation function = relu
+Validation loss: tensor(1.3211e+08, device='cuda:0')
+Convergence: -0.04924649393363943
+2025-10-09 14:52:18,297 Nepochs=30 nodes=[51040 25520 12760     1] lr=0.01 wd=0.0005718571428571429 bs=400 patience=5 act=relu
+2025-10-09 14:52:18,299 Validation loss: 132106304.000000  Convergence: -0.0492
+ 30%|███       | 15/50 [33:46<1:17:05, 132.16s/it] 
+Nepochs = 5
+Nodes = [51040 25520     1]
+Learning rate = 0.01
+Weight decay = 0.00014371428571428573
+Batch size = 400
+Patience = 6
+Activation function = relu
+Validation loss: tensor(10336682., device='cuda:0')
+Convergence: -0.13522357116169517
+2025-10-09 14:53:21,817 Nepochs=5 nodes=[51040 25520     1] lr=0.01 wd=0.00014371428571428573 bs=400 patience=6 act=relu
+2025-10-09 14:53:21,818 Validation loss: 10336682.000000  Convergence: -0.1352
+ 32%|███▏      | 16/50 [34:49<1:03:11, 111.50s/it] 
+Nepochs = 10
+Nodes = [51040 34026 17013     1]
+Learning rate = 1e-05
+Weight decay = 0.0005718571428571429
+Batch size = 100
+Patience = 3
+Activation function = relu
+Validation loss: tensor(0.0024, device='cuda:0')
+Convergence: 0.9994849086256797
+2025-10-09 14:53:51,914 Nepochs=10 nodes=[51040 34026 17013     1] lr=1e-05 wd=0.0005718571428571429 bs=100 patience=3 act=relu
+2025-10-09 14:53:51,914 Validation loss: 0.002421  Convergence: 0.9995
+ 34%|███▍      | 17/50 [35:20<47:51, 87.02s/it]    34%|███▍      | 17/50 [35:38<1:09:10, 125.77s/it]
+ 
+Nepochs = 10
+Nodes = [51040 25520     1]
+Learning rate = 0.006670000000000001
+Weight decay = 1e-06
+Batch size = 100
+Patience = 3
+Activation function = relu
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica1/isokann_random_search_2.py", line 78, in <module>
+    best_hyperparams, best_val_loss  = random_search(D0_,
+                                       ^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_1.py", line 196, in random_search
+    train_losses, val_losses, val_loss, convergence = power_method(X, Y,
+                                                      ^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_1.py", line 305, in power_method
+    slope = scipy.stats.linregress(old_chi, new_chi).slope
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/scipy/stats/_stats_py.py", line 10705, in linregress
+    raise ValueError("Cannot calculate a linear regression "
+ValueError: Cannot calculate a linear regression if all x values are identical

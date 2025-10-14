@@ -1,0 +1,194 @@
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_2/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_2/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_2/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_2/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output_2/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output_2/mokito/
+
+cuda
+torch.Size([1000, 10, 51040])
+  0%|          | 0/15 [00:00<?, ?it/s] 
+Nepochs = 10
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.01
+Weight decay = 0.005
+Batch size = 200
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(18853424., device='cuda:0')
+Convergence: -0.926053837386466
+2025-10-08 18:07:37,916 Nepochs=10 nodes=[51040 25520 12760     1] lr=0.01 wd=0.005 bs=200 patience=3 act=leakyrelu
+2025-10-08 18:07:37,918 Validation loss: 18853424.000000  Convergence: -0.9261
+  7%|▋         | 1/15 [14:49<3:27:39, 890.00s/it] 
+Nepochs = 10
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.005
+Weight decay = 0.0001
+Batch size = 50
+Patience = 5
+Activation function = leakyrelu
+Validation loss: tensor(4760.9092, device='cuda:0')
+Convergence: -0.5600272676327288
+2025-10-08 18:42:46,707 Nepochs=10 nodes=[51040 25520 12760     1] lr=0.005 wd=0.0001 bs=50 patience=5 act=leakyrelu
+2025-10-08 18:42:46,709 Validation loss: 4760.909180  Convergence: -0.5600
+ 13%|█▎        | 2/15 [49:58<5:48:10, 1606.93s/it] 
+Nepochs = 10
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.01
+Weight decay = 0.0001
+Batch size = 100
+Patience = 5
+Activation function = leakyrelu
+Validation loss: tensor(6.1436e+08, device='cuda:0')
+Convergence: -7.30035732431686
+2025-10-08 19:16:00,294 Nepochs=10 nodes=[51040 34026 17013     1] lr=0.01 wd=0.0001 bs=100 patience=5 act=leakyrelu
+2025-10-08 19:16:00,295 Validation loss: 614363584.000000  Convergence: -7.3004
+ 20%|██        | 3/15 [1:23:12<5:56:41, 1783.49s/it] 
+Nepochs = 10
+Nodes = [51040 34026     1]
+Learning rate = 0.001
+Weight decay = 0.001
+Batch size = 200
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(7.9870, device='cuda:0')
+Convergence: -1.5066974991453368
+2025-10-08 19:32:16,006 Nepochs=10 nodes=[51040 34026     1] lr=0.001 wd=0.001 bs=200 patience=3 act=leakyrelu
+2025-10-08 19:32:16,008 Validation loss: 7.987022  Convergence: -1.5067
+ 27%|██▋       | 4/15 [1:39:28<4:28:30, 1464.59s/it] 
+Nepochs = 15
+Nodes = [51040 34026     1]
+Learning rate = 0.005
+Weight decay = 0.005
+Batch size = 100
+Patience = 5
+Activation function = leakyrelu
+Validation loss: tensor(4.7584, device='cuda:0')
+Convergence: 1.0001492377202452
+2025-10-08 19:57:08,339 Nepochs=15 nodes=[51040 34026     1] lr=0.005 wd=0.005 bs=100 patience=5 act=leakyrelu
+2025-10-08 19:57:08,341 Validation loss: 4.758437  Convergence: 1.0001
+ 33%|███▎      | 5/15 [2:04:20<4:05:45, 1474.59s/it] 
+Nepochs = 15
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.005
+Weight decay = 0.0001
+Batch size = 100
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(1389800.2500, device='cuda:0')
+Convergence: -1.4595026179247086
+2025-10-08 20:18:37,204 Nepochs=15 nodes=[51040 25520 12760     1] lr=0.005 wd=0.0001 bs=100 patience=2 act=leakyrelu
+2025-10-08 20:18:37,205 Validation loss: 1389800.250000  Convergence: -1.4595
+ 40%|████      | 6/15 [2:25:49<3:31:43, 1411.44s/it] 
+Nepochs = 5
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.001
+Weight decay = 0.0001
+Batch size = 200
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(213.3276, device='cuda:0')
+Convergence: -0.05387123786444426
+2025-10-08 20:28:31,901 Nepochs=5 nodes=[51040 25520 12760     1] lr=0.001 wd=0.0001 bs=200 patience=2 act=leakyrelu
+2025-10-08 20:28:31,903 Validation loss: 213.327560  Convergence: -0.0539
+ 47%|████▋     | 7/15 [2:35:43<2:32:35, 1144.43s/it] 
+Nepochs = 10
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.001
+Weight decay = 0.005
+Batch size = 200
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(5601.5205, device='cuda:0')
+Convergence: 0.02457703483080375
+2025-10-08 20:46:00,495 Nepochs=10 nodes=[51040 34026 17013     1] lr=0.001 wd=0.005 bs=200 patience=2 act=leakyrelu
+2025-10-08 20:46:00,496 Validation loss: 5601.520508  Convergence: 0.0246
+ 53%|█████▎    | 8/15 [2:53:12<2:09:57, 1113.92s/it] 
+Nepochs = 15
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.01
+Weight decay = 0.001
+Batch size = 200
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(11752491., device='cuda:0')
+Convergence: 0.12887947717069
+2025-10-08 21:10:31,014 Nepochs=15 nodes=[51040 34026 17013     1] lr=0.01 wd=0.001 bs=200 patience=3 act=leakyrelu
+2025-10-08 21:10:31,016 Validation loss: 11752491.000000  Convergence: 0.1289
+ 60%|██████    | 9/15 [3:17:43<2:02:32, 1225.40s/it] 
+Nepochs = 5
+Nodes = [51040 25520     1]
+Learning rate = 0.001
+Weight decay = 0.005
+Batch size = 50
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(0.0254, device='cuda:0')
+Convergence: 1.1567877358545167
+2025-10-08 21:26:08,434 Nepochs=5 nodes=[51040 25520     1] lr=0.001 wd=0.005 bs=50 patience=3 act=leakyrelu
+2025-10-08 21:26:08,435 Validation loss: 0.025372  Convergence: 1.1568
+ 67%|██████▋   | 10/15 [3:33:20<1:34:42, 1136.49s/it] 
+Nepochs = 15
+Nodes = [51040 34026     1]
+Learning rate = 0.001
+Weight decay = 0.005
+Batch size = 200
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(1.8373, device='cuda:0')
+Convergence: -0.30586138056617124
+2025-10-08 21:40:25,321 Nepochs=15 nodes=[51040 34026     1] lr=0.001 wd=0.005 bs=200 patience=2 act=leakyrelu
+2025-10-08 21:40:25,387 Validation loss: 1.837328  Convergence: -0.3059
+ 73%|███████▎  | 11/15 [3:47:37<1:10:03, 1050.94s/it] 
+Nepochs = 10
+Nodes = [51040 34026     1]
+Learning rate = 0.001
+Weight decay = 0.005
+Batch size = 100
+Patience = 5
+Activation function = leakyrelu
+Validation loss: tensor(0.5592, device='cuda:0')
+Convergence: 0.5419494840656768
+2025-10-08 22:04:19,914 Nepochs=10 nodes=[51040 34026     1] lr=0.001 wd=0.005 bs=100 patience=5 act=leakyrelu
+2025-10-08 22:04:19,916 Validation loss: 0.559174  Convergence: 0.5419
+ 80%|████████  | 12/15 [4:11:31<58:22, 1167.63s/it]   
+Nepochs = 10
+Nodes = [51040 34026 17013     1]
+Learning rate = 0.01
+Weight decay = 0.001
+Batch size = 50
+Patience = 5
+Activation function = leakyrelu
+Validation loss: tensor(8292194.5000, device='cuda:0')
+Convergence: 1.2618044301836986
+2025-10-08 22:54:53,259 Nepochs=10 nodes=[51040 34026 17013     1] lr=0.01 wd=0.001 bs=50 patience=5 act=leakyrelu
+2025-10-08 22:54:53,261 Validation loss: 8292194.500000  Convergence: 1.2618
+ 87%|████████▋ | 13/15 [5:02:05<57:45, 1732.82s/it] 
+Nepochs = 10
+Nodes = [51040 34026     1]
+Learning rate = 0.01
+Weight decay = 0.0001
+Batch size = 50
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(3.6115, device='cuda:0')
+Convergence: -0.0068051958043074175
+2025-10-08 23:30:49,165 Nepochs=10 nodes=[51040 34026     1] lr=0.01 wd=0.0001 bs=50 patience=2 act=leakyrelu
+2025-10-08 23:30:49,166 Validation loss: 3.611476  Convergence: -0.0068
+ 93%|█████████▎| 14/15 [5:38:01<31:00, 1860.61s/it] 
+Nepochs = 5
+Nodes = [51040 25520 12760     1]
+Learning rate = 0.001
+Weight decay = 0.0001
+Batch size = 100
+Patience = 5
+Activation function = leakyrelu
+Validation loss: tensor(2285.9211, device='cuda:0')
+Convergence: 1.0006113905090122
+2025-10-08 23:41:56,301 Nepochs=5 nodes=[51040 25520 12760     1] lr=0.001 wd=0.0001 bs=100 patience=5 act=leakyrelu
+2025-10-08 23:41:56,304 Validation loss: 2285.921143  Convergence: 1.0006
+100%|██████████| 15/15 [5:49:08<00:00, 1500.86s/it]100%|██████████| 15/15 [5:49:08<00:00, 1396.56s/it]
+The best hyperparameters are: {'Nepochs': 5, 'nodes': array([51040, 25520,     1]), 'learning_rate': 0.001, 'weight_decay': 0.005, 'batch_size': 50, 'patience': 3, 'act_fun': 'leakyrelu'}
+The best validation loss is: tensor(0.0254, device='cuda:0')

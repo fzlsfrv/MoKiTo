@@ -5,6 +5,8 @@ from tqdm import tqdm
 import random
 from sklearn.model_selection import train_test_split
 import pickle
+import logging
+import sys
 
 # For reproducibility
 np.random.seed(0)
@@ -55,6 +57,7 @@ class NeuralNetwork(pt.nn.Module):
             self.activation  = pt.nn.LeakyReLU(LeakyReLU_par)
         
         self.activation2  = pt.nn.Softplus(10)
+        self.out_act = pt.nn.Sigmoid()
         
     def forward(self, X):
 
@@ -62,13 +65,13 @@ class NeuralNetwork(pt.nn.Module):
         for layer in self.hidden_layers[:-1]:
             X = self.activation(layer(X))
 
-        # Apply the last layer (but not the activation function)
+        # Apply activation function to last layer 
         X = self.hidden_layers[-1](X)
         
         if self.enforce_positive == 1:
             X= self.activation2(X)  #.unsqueeze(1)
 
-        return X.squeeze(-1)
+        return X.squeeze()
 
 def trainNN(net,
             lr,
@@ -207,7 +210,7 @@ def random_search(
         print("Validation loss:", val_loss)
         print("Convergence:", convergence[-1])
 
-        if val_loss < best_val_loss and convergence[-1] > 0.9:
+        if val_loss < best_val_loss and abs(convergence[-1] - 1) < 0.05:
             best_val_loss = val_loss
 
             best_hyperparams = {'Nepochs'        : Nepochs,
@@ -217,10 +220,18 @@ def random_search(
                                 'batch_size'     : batch_size,
                                 'patience'       : patience,
                                 'act_fun'        : act_fun}
+                
+        
+        logging.basicConfig(
+            level=logging.INFO,
+            format="%(asctime)s %(message)s",
+            handlers=[logging.FileHandler(out_dir + "logs/isokann_rs_job_output_1.txt"), logging.StreamHandler(sys.stdout)],
+            force=True,  
+        )
 
-            
-        with open(out_dir + f'hyperparams_{i}.pkl', 'wb') as file:
-                pickle.dump(best_hyperparams, file)
+
+        logging.info(f"Nepochs={Nepochs} nodes={nodes} lr={lr} wd={wd} bs={batch_size} patience={patience} act={act_fun}")
+        logging.info(f"Validation loss: {val_loss:.6f}  Convergence: {convergence[-1]:.4f}")
                 
 
         del f_NN

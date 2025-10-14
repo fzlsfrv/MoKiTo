@@ -1,12 +1,0 @@
-Created variables:
-inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
-out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/
-out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/
-out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/initial_states/
-out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/final_states/
-out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
-out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
-
-cuda
-torch.Size([1000, 10, 51040])
-  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [11:40<7:35:01, 700.03s/it]  5%|▌         | 2/40 [34:37<11:35:51, 1098.72s/it]

@@ -18,7 +18,7 @@ from tqdm import tqdm
 sys.path.append(os.path.abspath('../../../'))
 
 from src.useful_functions import read_dirs_paths
-from src.isokann.modules4 import *
+from src.isokann.modules3_1 import *
 
 # For matplotlib
 font = {'size'   : 10}
@@ -41,28 +41,24 @@ print(device)
 
 
 # Load initial and final states and convert to torch
-D0 = pt.load(out_trajectories1 + 'PWDistances_0.pt', map_location=device)
-DT = pt.load(out_trajectories1 + 'PWDistances_t.pt', map_location=device)
+D0 = pt.load(out_trajectories1 + 'PWDistances_0_40f.pt', map_location=device)
+DT = pt.load(out_trajectories1 + 'PWDistances_t_40f.pt', map_location=device)
 
-Npoints = D0.shape[0]
 Ndims   = D0.shape[1]
 
-Nfinpoints  = DT.shape[1]
-Nframes     = DT.shape[3]
 
 
-frame = 0
-# Dt = pt.clone(DT[frame,:,:,:])
+frame = 9
+
 Dt = DT[frame,:,:,:]
 
-
 print(Dt.shape)
+print(D0.shape)
 
 
 # In[3]:
 
 
-NN_epochs = [5, 10 ,15]
 
 
 NN_nodes =          [(Ndims, int(2*Ndims/3), 1), 
@@ -70,19 +66,13 @@ NN_nodes =          [(Ndims, int(2*Ndims/3), 1),
                       (Ndims, int(Ndims/2), 1), 
                       (Ndims, int(Ndims/2),int(Ndims/4), 1)]
 
-NN_lr = [ 0.001,
-          0.0005,
-          0.0001]
+NN_lr = np.linspace(1e-5, 1e-2, 10)        
+NN_wd = np.linspace(1e-6, 1e-3, 8)         
+NN_bs = np.arange(100, 600, 100)           
+NN_patience = np.arange(2, 7)              
+NN_epochs = np.arange(5, 31, 5)            
 
-NN_wd  = [ 0.001,
-           0.0007,
-           0.0003]
-
-NN_bs  = [100, 200, 500]
-
-NN_patience = [2, 3, 5]
-
-NN_act_fun = ['sigmoid']
+NN_act_fun = ['leakyrelu']
 
 best_hyperparams, best_val_loss  = random_search(D0,
                                                 Dt,
@@ -93,7 +83,7 @@ best_hyperparams, best_val_loss  = random_search(D0,
                                                 NN_bs,
                                                 NN_patience,
                                                 NN_act_fun,
-                                                search_iterations=40,
+                                                search_iterations=50,
                                                 test_size = 0.2,
                                                 out_dir = out_isokann)
 
@@ -106,6 +96,6 @@ print("The best validation loss is:",  best_val_loss)
 
 import pickle
 # Save to a file
-with open(out_isokann + 'hyperparameters_final.pkl', 'wb') as file:
+with open(out_isokann + 'hyperparameters_final_40f.pkl', 'wb') as file:
     pickle.dump(best_hyperparams, file)
 

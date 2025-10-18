@@ -1,0 +1,22 @@
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
+
+cuda
+torch.Size([240, 10, 46056])
+torch.Size([240, 46056])
+ 
+Nepochs = 18
+Nodes = [46056  2878  2878     1]
+Learning rate = 0.01
+Weight decay = 0.0001
+Batch size = 300
+Momentum = 0.99
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(0.9708, device='cuda:0')

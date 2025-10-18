@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica0/isokann_runs/isokann_1.py", line 21, in <module>
+    from src.isokann.modules3_3 import *
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 3, in <module>
+    import torch.nn.functional.normalize as normalize
+ModuleNotFoundError: No module named 'torch.nn.functional.normalize'; 'torch.nn.functional' is not a package

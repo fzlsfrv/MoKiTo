@@ -9,13 +9,12 @@ import sympy as sp
 import matplotlib.pyplot as plt
 import sys
 import os
-import glob
 
 # Add the project root
 sys.path.append(os.path.abspath('../../'))
 
 from src.useful_functions import *
-from src.openmm.PWDs_module1 import generate_PWDistances_torch
+from src.openmm.PWDs_module_3 import generate_PWDistances_torch
 
 # For reproducibility
 np.random.seed(0)
@@ -45,11 +44,11 @@ print(" ")
 generate_PWDistances_torch(
                         inp_dir  =  inp_dir ,
                         out_dir  =  out_trajectories2,
-                        iso_dir  =  out_trajectories1 ,
+                        out_final_states = out_final_states,
+                        iso_dir  =  out_trajectories1,
                         pdbfile_solute    = '2CM2_4884_v4.pdb', 
                         pdbfile_water     = 'pdbfile_water.pdb', 
-                        prmtopfile_solute = 'prmtopfile_solute.prmtop', 
-                        file_traj_water   = 'trajectory_water_combined.dcd',
+                        file_traj_water   = 'trajectory_water_combined6.dcd',
                         frames     = np.array([0,1,2,3,4,5,6,7,8,9]),
                         rel_coords = np.array([[0,70]]),
                         BB=True

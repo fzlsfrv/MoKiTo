@@ -8,18 +8,17 @@ import logging
 import sys
 
 # For reproducibility
-np.random.seed(0)
-pt.manual_seed(0)
-random.seed(0)
+#np.random.seed(0)
+#pt.manual_seed(0)
+#random.seed(0)
 
 # Check if CUDA is available, otherwise use CPU
 device = pt.device("cuda" if pt.cuda.is_available() else "cpu")
 
 def scale_and_shift(y):
-
     minarr = pt.min(y)
     maxarr = pt.max(y)
-    hat_y  = (y - minarr) / (maxarr - minarr)
+    hat_y =  (y - minarr) / (maxarr - minarr)
 
     return hat_y
     
@@ -226,6 +225,8 @@ def random_search(
                                 'momentum'       : momentum,
                                 'patience'       : patience,
                                 'act_fun'        : act_fun}
+                                
+            pt.save(f_NN.state_dict(), out_dir  + 'f_NN_rs_40f.pt')
 
         logging.basicConfig(
                     level=logging.INFO,
@@ -281,15 +282,17 @@ def power_method(   pt_x0,
                     #force=True,  
                 #)
            # logging.info(f"old_chi: {old_chi[0:10]}")
-
-        pt_chi  =  f_NN( pt_xt )
+        
+        
+        pt_chi  =  f_NN(pt_xt)
 
         if pt_chi.dim() == 1:
             pt_chi = pt_chi.unsqueeze(1)
 
         pt_y    =  pt.mean(pt_chi, axis=1)
-        pt_y       =  scale_and_shift(pt_y).to(device)
-        pt_y                            =  pt_y.clone().detach().requires_grad_(False)  
+        pt_y    =  scale_and_shift(pt_y).to(device)
+        pt_y    =  pt_y.clone().detach().requires_grad_(False)
+
         
         train_loss, val_loss, best_loss = trainNN(net      = f_NN,
                                                   lr       = lr,
@@ -311,6 +314,7 @@ def power_method(   pt_x0,
             val_LOSS             = np.append(val_LOSS, val_loss)
 
         new_chi   = f_NN(pt_x0).cpu().detach().numpy()
+        
 
         slope = scipy.stats.linregress(old_chi, new_chi).slope
         convergence.append( slope )

@@ -1,0 +1,664 @@
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
+
+cuda
+torch.Size([240, 10, 46056])
+torch.Size([240, 46056])
+ 
+Nepochs = 25
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.005994842503189409
+Weight decay = 3.727593720314938e-06
+Batch size = 100
+Momentum = 0.7949999999999999
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:37:05,166 Nepochs=25 nodes=[46056  5757  2878     1] lr=0.005994842503189409 wd=3.727593720314938e-06 bs=100 patience=2 act=leakyrelu
+2025-10-16 02:37:05,451 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 10
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.001291549665014884
+Weight decay = 5.1794746792312125e-05
+Batch size = 500
+Momentum = 0.6975
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:37:21,478 Nepochs=10 nodes=[46056  4096  2048  1024   256     1] lr=0.001291549665014884 wd=5.1794746792312125e-05 bs=500 patience=4 act=leakyrelu
+2025-10-16 02:37:21,478 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 15
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.003593813663804626
+Weight decay = 3.727593720314938e-06
+Batch size = 200
+Momentum = 0.7949999999999999
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:37:37,585 Nepochs=15 nodes=[46056  4096  2048  1024   256     1] lr=0.003593813663804626 wd=3.727593720314938e-06 bs=200 patience=4 act=leakyrelu
+2025-10-16 02:37:37,586 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 15
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.001291549665014884
+Weight decay = 3.727593720314938e-06
+Batch size = 400
+Momentum = 0.7949999999999999
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:38:14,414 Nepochs=15 nodes=[46056 11514  5757  2878  1439     1] lr=0.001291549665014884 wd=3.727593720314938e-06 bs=400 patience=2 act=leakyrelu
+2025-10-16 02:38:14,425 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 10
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.0001668100537200059
+Weight decay = 1.3894954943731361e-05
+Batch size = 400
+Momentum = 0.8925
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:38:30,531 Nepochs=10 nodes=[46056  4096  2048  1024   256     1] lr=0.0001668100537200059 wd=1.3894954943731361e-05 bs=400 patience=4 act=leakyrelu
+2025-10-16 02:38:30,532 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 25
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.002154434690031882
+Weight decay = 1e-06
+Batch size = 400
+Momentum = 0.6
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:39:07,456 Nepochs=25 nodes=[46056 11514  5757  2878  1439     1] lr=0.002154434690031882 wd=1e-06 bs=400 patience=2 act=leakyrelu
+2025-10-16 02:39:07,456 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 20
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.001291549665014884
+Weight decay = 2.6826957952797274e-05
+Batch size = 200
+Momentum = 0.6
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:39:21,550 Nepochs=20 nodes=[46056  4096  2048  1024   256     1] lr=0.001291549665014884 wd=2.6826957952797274e-05 bs=200 patience=3 act=leakyrelu
+2025-10-16 02:39:21,550 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 20
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.0001668100537200059
+Weight decay = 2.6826957952797274e-05
+Batch size = 500
+Momentum = 0.7949999999999999
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:40:09,980 Nepochs=20 nodes=[46056 11514  5757  2878  1439     1] lr=0.0001668100537200059 wd=2.6826957952797274e-05 bs=500 patience=4 act=leakyrelu
+2025-10-16 02:40:09,980 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 30
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.0001
+Weight decay = 5.1794746792312125e-05
+Batch size = 500
+Momentum = 0.7949999999999999
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:40:58,584 Nepochs=30 nodes=[46056 11514  5757  2878  1439     1] lr=0.0001 wd=5.1794746792312125e-05 bs=500 patience=4 act=leakyrelu
+2025-10-16 02:40:58,589 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 40
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.0002782559402207126
+Weight decay = 1e-06
+Batch size = 500
+Momentum = 0.7949999999999999
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:41:15,458 Nepochs=40 nodes=[46056  5757  2878     1] lr=0.0002782559402207126 wd=1e-06 bs=500 patience=2 act=leakyrelu
+2025-10-16 02:41:15,459 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 25
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.0002782559402207126
+Weight decay = 1.3894954943731361e-05
+Batch size = 400
+Momentum = 0.6975
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:41:58,086 Nepochs=25 nodes=[46056 11514  5757  2878  1439     1] lr=0.0002782559402207126 wd=1.3894954943731361e-05 bs=400 patience=3 act=leakyrelu
+2025-10-16 02:41:58,086 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 20
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.000774263682681127
+Weight decay = 1.9306977288832498e-06
+Batch size = 200
+Momentum = 0.6975
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:42:34,909 Nepochs=20 nodes=[46056 11514  5757  2878  1439     1] lr=0.000774263682681127 wd=1.9306977288832498e-06 bs=200 patience=2 act=leakyrelu
+2025-10-16 02:42:34,910 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 10
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.0001
+Weight decay = 5.1794746792312125e-05
+Batch size = 400
+Momentum = 0.6
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(0.2383, device='cuda:0')
+Convergence: 0.9995454796919301
+2025-10-16 02:43:10,526 Nepochs=10 nodes=[46056 11514  5757  2878  1439     1] lr=0.0001 wd=5.1794746792312125e-05 bs=400 patience=3 act=leakyrelu
+2025-10-16 02:43:10,526 Validation loss: 0.238261  Convergence: 0.9995
+ 
+Nepochs = 40
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.005994842503189409
+Weight decay = 0.0001
+Batch size = 300
+Momentum = 0.99
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:43:30,107 Nepochs=40 nodes=[46056  5757  2878     1] lr=0.005994842503189409 wd=0.0001 bs=300 patience=3 act=leakyrelu
+2025-10-16 02:43:30,108 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 35
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.003593813663804626
+Weight decay = 3.727593720314938e-06
+Batch size = 500
+Momentum = 0.7949999999999999
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:43:52,387 Nepochs=35 nodes=[46056  5757  2878     1] lr=0.003593813663804626 wd=3.727593720314938e-06 bs=500 patience=4 act=leakyrelu
+2025-10-16 02:43:52,387 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 25
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.000774263682681127
+Weight decay = 1.3894954943731361e-05
+Batch size = 500
+Momentum = 0.99
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:44:06,490 Nepochs=25 nodes=[46056  4096  2048  1024   256     1] lr=0.000774263682681127 wd=1.3894954943731361e-05 bs=500 patience=3 act=leakyrelu
+2025-10-16 02:44:06,491 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 20
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.00046415888336127773
+Weight decay = 0.0001
+Batch size = 300
+Momentum = 0.6975
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:44:20,591 Nepochs=20 nodes=[46056  4096  2048  1024   256     1] lr=0.00046415888336127773 wd=0.0001 bs=300 patience=3 act=leakyrelu
+2025-10-16 02:44:20,591 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 15
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.001291549665014884
+Weight decay = 5.1794746792312125e-05
+Batch size = 400
+Momentum = 0.6
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:45:03,461 Nepochs=15 nodes=[46056 11514  5757  2878  1439     1] lr=0.001291549665014884 wd=5.1794746792312125e-05 bs=400 patience=3 act=leakyrelu
+2025-10-16 02:45:03,462 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 15
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.001291549665014884
+Weight decay = 3.727593720314938e-06
+Batch size = 400
+Momentum = 0.6
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:45:20,359 Nepochs=15 nodes=[46056  5757  2878     1] lr=0.001291549665014884 wd=3.727593720314938e-06 bs=400 patience=2 act=leakyrelu
+2025-10-16 02:45:20,359 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 30
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.0002782559402207126
+Weight decay = 7.196856730011514e-06
+Batch size = 300
+Momentum = 0.7949999999999999
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:45:57,212 Nepochs=30 nodes=[46056 11514  5757  2878  1439     1] lr=0.0002782559402207126 wd=7.196856730011514e-06 bs=300 patience=2 act=leakyrelu
+2025-10-16 02:45:57,212 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 10
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.002154434690031882
+Weight decay = 1.3894954943731361e-05
+Batch size = 100
+Momentum = 0.99
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:46:11,299 Nepochs=10 nodes=[46056  4096  2048  1024   256     1] lr=0.002154434690031882 wd=1.3894954943731361e-05 bs=100 patience=2 act=leakyrelu
+2025-10-16 02:46:11,299 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 20
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.0002782559402207126
+Weight decay = 7.196856730011514e-06
+Batch size = 200
+Momentum = 0.6
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:46:59,768 Nepochs=20 nodes=[46056 11514  5757  2878  1439     1] lr=0.0002782559402207126 wd=7.196856730011514e-06 bs=200 patience=4 act=leakyrelu
+2025-10-16 02:46:59,768 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 35
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.0001
+Weight decay = 2.6826957952797274e-05
+Batch size = 500
+Momentum = 0.6975
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.1944, device='cuda:0')
+Convergence: 1.0050229488028022
+2025-10-16 02:47:51,268 Nepochs=35 nodes=[46056 11514  5757  2878  1439     1] lr=0.0001 wd=2.6826957952797274e-05 bs=500 patience=2 act=leakyrelu
+2025-10-16 02:47:51,268 Validation loss: 0.194402  Convergence: 1.0050
+ 
+Nepochs = 20
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.005994842503189409
+Weight decay = 5.1794746792312125e-05
+Batch size = 400
+Momentum = 0.6
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:48:07,454 Nepochs=20 nodes=[46056  4096  2048  1024   256     1] lr=0.005994842503189409 wd=5.1794746792312125e-05 bs=400 patience=4 act=leakyrelu
+2025-10-16 02:48:07,454 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 5
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.000774263682681127
+Weight decay = 1.3894954943731361e-05
+Batch size = 100
+Momentum = 0.99
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:48:26,896 Nepochs=5 nodes=[46056  5757  2878     1] lr=0.000774263682681127 wd=1.3894954943731361e-05 bs=100 patience=2 act=leakyrelu
+2025-10-16 02:48:26,896 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 40
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.001291549665014884
+Weight decay = 3.727593720314938e-06
+Batch size = 200
+Momentum = 0.7949999999999999
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:49:03,729 Nepochs=40 nodes=[46056 11514  5757  2878  1439     1] lr=0.001291549665014884 wd=3.727593720314938e-06 bs=200 patience=2 act=leakyrelu
+2025-10-16 02:49:03,729 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 30
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.003593813663804626
+Weight decay = 1.9306977288832498e-06
+Batch size = 200
+Momentum = 0.7949999999999999
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:49:40,808 Nepochs=30 nodes=[46056 11514  5757  2878  1439     1] lr=0.003593813663804626 wd=1.9306977288832498e-06 bs=200 patience=2 act=leakyrelu
+2025-10-16 02:49:40,808 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 10
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.00046415888336127773
+Weight decay = 2.6826957952797274e-05
+Batch size = 100
+Momentum = 0.8925
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:50:04,278 Nepochs=10 nodes=[46056  5757  2878     1] lr=0.00046415888336127773 wd=2.6826957952797274e-05 bs=100 patience=3 act=leakyrelu
+2025-10-16 02:50:04,278 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 5
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.00046415888336127773
+Weight decay = 1.3894954943731361e-05
+Batch size = 400
+Momentum = 0.99
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:50:46,960 Nepochs=5 nodes=[46056 11514  5757  2878  1439     1] lr=0.00046415888336127773 wd=1.3894954943731361e-05 bs=400 patience=3 act=leakyrelu
+2025-10-16 02:50:46,960 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 20
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.000774263682681127
+Weight decay = 7.196856730011514e-06
+Batch size = 400
+Momentum = 0.6
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:51:03,827 Nepochs=20 nodes=[46056  5757  2878     1] lr=0.000774263682681127 wd=7.196856730011514e-06 bs=400 patience=2 act=leakyrelu
+2025-10-16 02:51:03,827 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 10
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.005994842503189409
+Weight decay = 7.196856730011514e-06
+Batch size = 500
+Momentum = 0.99
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:51:52,304 Nepochs=10 nodes=[46056 11514  5757  2878  1439     1] lr=0.005994842503189409 wd=7.196856730011514e-06 bs=500 patience=4 act=leakyrelu
+2025-10-16 02:51:52,304 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 25
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.0001668100537200059
+Weight decay = 3.727593720314938e-06
+Batch size = 300
+Momentum = 0.99
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:52:11,877 Nepochs=25 nodes=[46056  5757  2878     1] lr=0.0001668100537200059 wd=3.727593720314938e-06 bs=300 patience=3 act=leakyrelu
+2025-10-16 02:52:11,878 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 10
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.0002782559402207126
+Weight decay = 1.9306977288832498e-06
+Batch size = 200
+Momentum = 0.99
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:52:34,155 Nepochs=10 nodes=[46056  5757  2878     1] lr=0.0002782559402207126 wd=1.9306977288832498e-06 bs=200 patience=4 act=leakyrelu
+2025-10-16 02:52:34,155 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 15
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.0002782559402207126
+Weight decay = 2.6826957952797274e-05
+Batch size = 100
+Momentum = 0.6975
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:52:53,704 Nepochs=15 nodes=[46056  5757  2878     1] lr=0.0002782559402207126 wd=2.6826957952797274e-05 bs=100 patience=2 act=leakyrelu
+2025-10-16 02:52:53,705 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 10
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.0001668100537200059
+Weight decay = 1.9306977288832498e-06
+Batch size = 400
+Momentum = 0.99
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:53:42,185 Nepochs=10 nodes=[46056 11514  5757  2878  1439     1] lr=0.0001668100537200059 wd=1.9306977288832498e-06 bs=400 patience=4 act=leakyrelu
+2025-10-16 02:53:42,185 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 30
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.01
+Weight decay = 7.196856730011514e-06
+Batch size = 400
+Momentum = 0.8925
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:54:30,617 Nepochs=30 nodes=[46056 11514  5757  2878  1439     1] lr=0.01 wd=7.196856730011514e-06 bs=400 patience=4 act=leakyrelu
+2025-10-16 02:54:30,618 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 30
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.003593813663804626
+Weight decay = 1.3894954943731361e-05
+Batch size = 300
+Momentum = 0.7949999999999999
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:54:42,744 Nepochs=30 nodes=[46056  4096  2048  1024   256     1] lr=0.003593813663804626 wd=1.3894954943731361e-05 bs=300 patience=2 act=leakyrelu
+2025-10-16 02:54:42,744 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 20
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.01
+Weight decay = 1e-06
+Batch size = 100
+Momentum = 0.8925
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:55:25,376 Nepochs=20 nodes=[46056 11514  5757  2878  1439     1] lr=0.01 wd=1e-06 bs=100 patience=2 act=leakyrelu
+2025-10-16 02:55:25,376 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 25
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.002154434690031882
+Weight decay = 7.196856730011514e-06
+Batch size = 400
+Momentum = 0.6
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:55:42,238 Nepochs=25 nodes=[46056  5757  2878     1] lr=0.002154434690031882 wd=7.196856730011514e-06 bs=400 patience=2 act=leakyrelu
+2025-10-16 02:55:42,238 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 20
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.0001
+Weight decay = 1e-06
+Batch size = 200
+Momentum = 0.8925
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:55:59,137 Nepochs=20 nodes=[46056  5757  2878     1] lr=0.0001 wd=1e-06 bs=200 patience=2 act=leakyrelu
+2025-10-16 02:55:59,137 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 15
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.001291549665014884
+Weight decay = 3.727593720314938e-06
+Batch size = 500
+Momentum = 0.6
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:56:41,758 Nepochs=15 nodes=[46056 11514  5757  2878  1439     1] lr=0.001291549665014884 wd=3.727593720314938e-06 bs=500 patience=3 act=leakyrelu
+2025-10-16 02:56:41,758 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 35
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.0001
+Weight decay = 0.0001
+Batch size = 500
+Momentum = 0.99
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:56:58,646 Nepochs=35 nodes=[46056  5757  2878     1] lr=0.0001 wd=0.0001 bs=500 patience=2 act=leakyrelu
+2025-10-16 02:56:58,646 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 15
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.00046415888336127773
+Weight decay = 5.1794746792312125e-05
+Batch size = 400
+Momentum = 0.99
+Patience = 2
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:57:15,504 Nepochs=15 nodes=[46056  5757  2878     1] lr=0.00046415888336127773 wd=5.1794746792312125e-05 bs=400 patience=2 act=leakyrelu
+2025-10-16 02:57:15,504 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 15
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.0001668100537200059
+Weight decay = 1e-06
+Batch size = 500
+Momentum = 0.7949999999999999
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:57:35,071 Nepochs=15 nodes=[46056  5757  2878     1] lr=0.0001668100537200059 wd=1e-06 bs=500 patience=3 act=leakyrelu
+2025-10-16 02:57:35,071 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 35
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.002154434690031882
+Weight decay = 7.196856730011514e-06
+Batch size = 500
+Momentum = 0.7949999999999999
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:57:54,647 Nepochs=35 nodes=[46056  5757  2878     1] lr=0.002154434690031882 wd=7.196856730011514e-06 bs=500 patience=3 act=leakyrelu
+2025-10-16 02:57:54,647 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 35
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.0001668100537200059
+Weight decay = 1e-06
+Batch size = 500
+Momentum = 0.7949999999999999
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(0.2171, device='cuda:0')
+Convergence: 0.9956658344334115
+2025-10-16 02:58:11,990 Nepochs=35 nodes=[46056  4096  2048  1024   256     1] lr=0.0001668100537200059 wd=1e-06 bs=500 patience=3 act=leakyrelu
+2025-10-16 02:58:11,990 Validation loss: 0.217123  Convergence: 0.9957
+ 
+Nepochs = 15
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.0001
+Weight decay = 1.9306977288832498e-06
+Batch size = 200
+Momentum = 0.6
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.2339, device='cuda:0')
+Convergence: 0.9992370338334177
+2025-10-16 02:58:39,182 Nepochs=15 nodes=[46056 11514  5757  2878  1439     1] lr=0.0001 wd=1.9306977288832498e-06 bs=200 patience=2 act=leakyrelu
+2025-10-16 02:58:39,182 Validation loss: 0.233926  Convergence: 0.9992
+ 
+Nepochs = 10
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.0002782559402207126
+Weight decay = 2.6826957952797274e-05
+Batch size = 200
+Momentum = 0.99
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:58:55,220 Nepochs=10 nodes=[46056  4096  2048  1024   256     1] lr=0.0002782559402207126 wd=2.6826957952797274e-05 bs=200 patience=4 act=leakyrelu
+2025-10-16 02:58:55,220 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 30
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.005994842503189409
+Weight decay = 7.196856730011514e-06
+Batch size = 100
+Momentum = 0.8925
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 02:59:12,153 Nepochs=30 nodes=[46056  4096  2048  1024   256     1] lr=0.005994842503189409 wd=7.196856730011514e-06 bs=100 patience=3 act=leakyrelu
+2025-10-16 02:59:12,153 Validation loss: inf  Convergence: nan
+ 
+Nepochs = 20
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.002154434690031882
+Weight decay = 3.727593720314938e-06
+Batch size = 100
+Momentum = 0.6
+Patience = 4
+Activation function = leakyrelu
+Validation loss: inf
+Convergence: nan
+2025-10-16 03:00:11,938 Nepochs=20 nodes=[46056 11514  5757  2878  1439     1] lr=0.002154434690031882 wd=3.727593720314938e-06 bs=100 patience=4 act=leakyrelu
+2025-10-16 03:00:11,938 Validation loss: inf  Convergence: nan
+The best hyperparameters are: {'Nepochs': np.int64(35), 'nodes': array([46056, 11514,  5757,  2878,  1439,     1]), 'learning_rate': np.float64(0.0001), 'weight_decay': np.float64(2.6826957952797274e-05), 'batch_size': np.int64(500), 'momentum': np.float64(0.6975), 'patience': np.int64(2), 'act_fun': 'leakyrelu'}
+The best validation loss is: tensor(0.1944, device='cuda:0')

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica0/isokann_runs/isokann_1.py", line 107, in <module>
+    f_NN = NeuralNetwork( Nodes = np.asarray(nodes), activation_function = act_fun ).to(device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 69, in __init__
+    self.apply(_init_linear)
+               ^^^^^^^^^^^^
+NameError: name '_init_linear' is not defined

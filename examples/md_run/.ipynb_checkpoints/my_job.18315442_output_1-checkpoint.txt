@@ -1,0 +1,18 @@
+ 
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_[0-5]*/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_[0-5]*/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output_general/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output_general/mokito/
+/scratch/htc/fsafarov/2cm2_simulation/md2/output_general/isokann/ already exists!
+ 
+ 
+ 
+This will create torch files containing PW distances using only BACKBONE atoms
+ 
+Number of initial states: 6000
+dcdplugin) detected standard 32-bit DCD file of native endianness
+dcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)

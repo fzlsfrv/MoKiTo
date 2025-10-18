@@ -1,0 +1,17 @@
+  0%|          | 0/50 [00:00<?, ?it/s]  0%|          | 0/50 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica1/isokann_rs_runs/isokann_random_search_5.py", line 80, in <module>
+    best_hyperparams, best_val_loss  = random_search(D0,
+                                       ^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 204, in random_search
+    train_losses, val_losses, val_loss, convergence = power_method(X, Y,
+                                                      ^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 289, in power_method
+    xt_loader = DataLoader(pt_xt, batch_size=batch_size, shuffle=True, pin_memory=True)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 391, in __init__
+    batch_sampler = BatchSampler(sampler, batch_size, drop_last)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/utils/data/sampler.py", line 315, in __init__
+    raise ValueError(
+ValueError: batch_size should be a positive integer value, but got batch_size=200

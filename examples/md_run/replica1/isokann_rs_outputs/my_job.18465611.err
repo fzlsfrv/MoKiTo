@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica1/isokann_rs_runs/isokann_random_search_2.py", line 80, in <module>
+    best_hyperparams, best_val_loss  = random_search(D0,
+                                       ^^^^^^^^^^^^^^^^^
+TypeError: random_search() missing 1 required positional argument: 'NN_patience'

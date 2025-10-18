@@ -1,0 +1,14 @@
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_0/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_0/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_0/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_0/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
+
+cuda
+torch.Size([40, 46056])
+torch.Size([10, 40, 10, 46056])
+torch.Size([40, 10, 46056])
+The best hyperparameters are: {'Nepochs': np.int64(30), 'nodes': array([46056,  4096,  2048,  1024,   256,     1]), 'learning_rate': np.float64(0.0001), 'weight_decay': np.float64(2.6826957952797274e-05), 'batch_size': np.int64(100), 'momentum': np.float64(0.6), 'patience': np.int64(3), 'act_fun': 'leakyrelu'}

@@ -1,0 +1,6 @@
+/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/MDAnalysis/topology/PDBParser.py:295: UserWarning: PDB file is missing resid information.  Defaulted to '1'
+  warnings.warn("PDB file is missing resid information.  "
+/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/MDAnalysis/coordinates/DCD.py:165: DeprecationWarning: DCDReader currently makes independent timesteps by copying self.ts while other readers update self.ts inplace. This behavior will be changed in 3.0 to be the same as other readers. Read more at https://github.com/MDAnalysis/mdanalysis/issues/3889 to learn if this change in behavior might affect you.
+  warnings.warn("DCDReader currently makes independent timesteps"
+  0%|          | 0/240 [00:00<?, ?it/s] 30%|███       | 73/240 [00:00<00:00, 729.52it/s] 64%|██████▍   | 154/240 [00:00<00:00, 772.36it/s] 98%|█████████▊| 235/240 [00:00<00:00, 786.72it/s]100%|██████████| 240/240 [00:00<00:00, 778.37it/s]
+  0%|          | 0/40 [00:00<?, ?it/s]  2%|▎         | 1/40 [00:06<04:23,  6.76s/it]  5%|▌         | 2/40 [00:13<04:08,  6.54s/it]  8%|▊         | 3/40 [00:19<03:58,  6.44s/it] 10%|█         | 4/40 [00:25<03:51,  6.42s/it] 12%|█▎        | 5/40 [00:32<03:46,  6.47s/it] 15%|█▌        | 6/40 [00:38<03:37,  6.40s/it]

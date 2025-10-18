@@ -166,9 +166,11 @@ def random_search(
                     NN_mu,
                     NN_patience,
                     NN_act_fun,
+                    Niters = 100,
                     search_iterations=20,
                     test_size = 0.2,
-                    out_dir = 'output/isokann/'
+                    out_dir = 'output/isokann/',
+                    load_check=False
                 ):
 
     best_hyperparams  = None
@@ -195,13 +197,15 @@ def random_search(
         print("Momentum =",          momentum)
         print("Patience =",            patience)
         print("Activation function =", act_fun)
+        
+        
 
         f_NN = NeuralNetwork( Nodes = nodes, activation_function = act_fun ).to(device)
 
         train_losses, val_losses, val_loss, convergence = power_method(X, Y,
                                                           f_NN,
                                                           scale_and_shift,
-                                                          Niters = 100,
+                                                          Niters = Niters,
                                                           Nepochs = Nepochs,
                                                           tolerance  = 1e-3,
                                                           lr = lr,
@@ -214,7 +218,7 @@ def random_search(
         print("Validation loss:", val_loss)
         print("Convergence:", convergence[-1])
 
-        if val_loss < best_val_loss and abs(convergence[-1] - 1) < 0.05:
+        if val_loss < best_val_loss:
             best_val_loss = val_loss
 
             best_hyperparams = {'Nepochs'        : Nepochs,
@@ -225,15 +229,14 @@ def random_search(
                                 'momentum'       : momentum,
                                 'patience'       : patience,
                                 'act_fun'        : act_fun}
-                                
-            pt.save(f_NN.state_dict(), out_dir  + 'f_NN_rs.pt')
-
         logging.basicConfig(
                     level=logging.INFO,
                     format="%(asctime)s %(message)s",
                     handlers=[logging.FileHandler(out_dir + "logs/isokann_rs_job_output_1.txt"), logging.StreamHandler(sys.stdout)],
                     force=True,  
                 )
+
+                                
 
         logging.info(f"Nepochs={Nepochs} nodes={nodes} lr={lr} wd={wd} bs={batch_size} patience={patience} act={act_fun}")
         logging.info(f"Validation loss: {val_loss:.6f}  Convergence: {convergence[-1]:.4f}")
@@ -282,15 +285,17 @@ def power_method(   pt_x0,
                     #force=True,  
                 #)
            # logging.info(f"old_chi: {old_chi[0:10]}")
-
-        pt_chi  =  f_NN( pt_xt )
+        
+        
+        pt_chi  =  f_NN(pt_xt)
 
         if pt_chi.dim() == 1:
             pt_chi = pt_chi.unsqueeze(1)
 
         pt_y    =  pt.mean(pt_chi, axis=1)
-        pt_y       =  scale_and_shift(pt_y).to(device)
-        pt_y                            =  pt_y.clone().detach().requires_grad_(False)  
+        pt_y    =  scale_and_shift(pt_y).to(device)
+        pt_y    =  pt_y.clone().detach().requires_grad_(False)
+
         
         train_loss, val_loss, best_loss = trainNN(net      = f_NN,
                                                   lr       = lr,
@@ -312,6 +317,7 @@ def power_method(   pt_x0,
             val_LOSS             = np.append(val_LOSS, val_loss)
 
         new_chi   = f_NN(pt_x0).cpu().detach().numpy()
+        
 
         slope = scipy.stats.linregress(old_chi, new_chi).slope
         convergence.append( slope )

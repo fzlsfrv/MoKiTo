@@ -17,8 +17,8 @@ from tqdm import tqdm
 # Add the project root
 sys.path.append(os.path.abspath('../../../../'))
 
-from src.useful_functions import read_dirs_paths
-from src.isokann.modules3_2 import *
+from src.useful_functions import *
+from src.isokann.modules3_3 import *
 
 # For matplotlib
 font = {'size'   : 10}
@@ -30,56 +30,72 @@ np.random.seed(0)
 pt.manual_seed(0)
 
 # Read directory paths
-read_dirs_paths('../dir_paths.txt', globals())
+read_dirs_paths('../../dir_paths.txt', globals())
 
 device = pt.device("cuda" if pt.cuda.is_available() else "cpu")
 print("")
 print(device)
 
 
-# In[2]:
 
 
 # Load initial and final states and convert to torch
-D0 = pt.load(out_trajectories1 + 'PWDistances_0_40f.pt', map_location=device)
-DT = pt.load(out_trajectories1 + 'PWDistances_t_40f.pt', map_location=device)
+D0 = pt.load(out_trajectories1 + 'PWDistances_0_40f-full.pt', map_location=device)
+DT = pt.load(out_trajectories1 + 'PWDistances_t_40f-full.pt', map_location=device)
 
 R0 = np.loadtxt(out_trajectories1 + 'R0.txt')
+
+x0_mean = D0.mean(dim=-1, keepdim=True) 
+x0_std = D0.std(dim=-1, keepdim=True)
+D0_n = (D0 - x0_mean) / (x0_std + 1e-8)
+
+frame = 9
+
+Dt = DT[frame,:,:,:]
+
+xt_mean = Dt.mean(dim=-1, keepdim=True) 
+xt_std = Dt.std(dim=-1, keepdim=True)
+Dt_n = (Dt - xt_mean) / (xt_std + 1e-8)
+
 
 
 Npoints = D0.shape[0]
 Ndims   = D0.shape[1]
 
-print(D0.shape)
-print(DT.shape)
-
-
-frame = 9
-Dt = DT[frame,:,:,:]
-
 print(Dt.shape)
-
-
-# In[ ]:
+print(D0.shape)
 
 
 
-best_hyperparams = { 
-                        'Nepochs': 20,
-                        'nodes': np.array([46056, 23028, 11514,     1]),
-                        'learning_rate': 1e-05,
-                        'weight_decay': 0.0005718571428571429,
-                        'batch_size': 500,
-                        'momentum' : 0.9425,
-                        'patience': 5,
-                        'act_fun': 'leakyrelu'
-}
+#import pickle 
+
+    
+# Load from the file
+#with open(out_isokann + 'hyperparameters_final_40f.pkl', 'rb') as file:
+#    best_hyperparams = pickle.load(file)
+
+
+
+#print("The best hyperparameters are:", best_hyperparams)
+
+
 
 # In[5]:
 
 
+best_hyperparams = {
+                    'Nepochs': 20,
+                    'nodes': np.array([46056, 23028, 11514,  5757,  2878,  1439,     1]),
+                    'learning_rate':0.0001,
+                    'weight_decay':3.727593720314938e-06,
+                    'batch_size':200,
+                    'momentum':0.6,
+                    'patience':2,
+                    'act_fun': 'leakyrelu'
+    }
+
 # Power method iterations
-Niters    = 400
+Niters    = 600
 
 # NN hyperparameters
 Nepochs   = best_hyperparams['Nepochs']
@@ -96,9 +112,7 @@ tolerance = 0.000001
 
 
 # Define the interpolating function
-f_NN = NeuralNetwork( Nodes = np.asarray(nodes) ).to(device)
-
-npX0 = D0.cpu().detach().numpy()
+f_NN = NeuralNetwork( Nodes = np.asarray(nodes), activation_function = act_fun ).to(device)
 
 
 
@@ -107,7 +121,7 @@ train_LOSS, val_LOSS, best_loss, convergence = power_method(D0,
                                                             Dt,
                                                             f_NN,
                                                             scale_and_shift,
-                                                            Niters = 200,
+                                                            Niters = Niters,
                                                             Nepochs = Nepochs,
                                                             tolerance  = tolerance,
                                                             lr = lr,
@@ -119,8 +133,8 @@ train_LOSS, val_LOSS, best_loss, convergence = power_method(D0,
                                                             test_size = 0.2,
                                                             loss ='full'
                                                                 )
-
-chi  = f_NN(D0).cpu().detach().numpy()
+with pt.no_grad():    
+    chi  = f_NN(D0).cpu().detach().numpy()
 
 
 # In[5]:
@@ -132,12 +146,11 @@ chi  = f_NN(D0).cpu().detach().numpy()
 
 # In[6]:
 
-
-pt.save(f_NN.state_dict(), out_isokann  + 'f_NN_6.pt')
-np.save(out_isokann + 'outs/val_LOSS_6.npy', val_LOSS)
-np.save(out_isokann + 'outs/train_LOSS_6.npy', train_LOSS)
-np.save(out_isokann + 'outs/chi0_6.npy', chi)
-np.save(out_isokann + 'outs/convergence_6.npy', convergence)
+out_folder = get_latest(out_isokann, iso_outs=True, create_new=True)
+np.savetxt(os.path.join(out_folder,'val_LOSS.txt'), val_LOSS)
+np.savetxt(os.path.join(out_folder,'train_LOSS.txt'), train_LOSS)
+np.savetxt(os.path.join(out_folder,'chi0.txt'), chi)
+np.savetxt(os.path.join(out_folder,'convergence.txt'), convergence)
 
 
 # Calculate propagated chi

@@ -1,0 +1,33 @@
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
+
+cuda
+torch.Size([240, 10, 46056])
+torch.Size([240, 46056])
+ 
+Nepochs = 5
+Nodes = [46056  8192  8192  2048     1]
+Learning rate = 0.002
+Weight decay = 0.0008714285714285715
+Batch size = 100
+Momentum = 0.99
+Patience = 3
+Activation function = leakyrelu
+Validation loss: inf
+2025-10-18 21:44:27,385 Nepochs=5 nodes=[46056  8192  8192  2048     1] lr=0.002 wd=0.0008714285714285715 bs=100 patience=3 act=leakyrelu
+2025-10-18 21:44:27,904 Validation loss: inf
+ 
+Nepochs = 5
+Nodes = [4.6056e+04 1.1514e+04 2.0480e+03 1.0000e+00]
+Learning rate = 0.009000000000000001
+Weight decay = 0.0001
+Batch size = 250
+Momentum = 0.8925
+Patience = 6
+Activation function = leakyrelu

@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=my_job              # Name of the job
-#SBATCH --output=my_job_output.txt     # Standard output and error log
+#SBATCH --output=my_job_output_40f.txt     # Standard output and error log
 #SBATCH --ntasks=1                     # Run on a single task
 #SBATCH --cpus-per-task=32             # Number of CPU cores per task
 #SBATCH --mem=64G                      # Total memory

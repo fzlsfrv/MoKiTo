@@ -127,7 +127,8 @@ def generate_PWDistances_torch(
             traj.trajectory[i]
             atoms   =  traj.atoms[sel_idx]
             atom_coords = atoms.positions
-            d0[:, int(i//25)] = self_distance_array(atom_coords, box = ref.dimensions)
+            box_ = traj.trajectory.ts.dimensions
+            d0[:, int(i//25)] = self_distance_array(atom_coords, box = box_)
         
         
         d0 = np.transpose(d0)
@@ -144,7 +145,8 @@ def generate_PWDistances_torch(
             traj.trajectory[i]
             atoms   =  traj.atoms[sel_idx]
             atom_coords = atoms.positions
-            d0[:, int(i//25)] = self_distance_array(atom_coords, box = ref.dimensions)
+            box_ = traj.trajectory.ts.dimensions
+            d0[:, int(i//25)] = self_distance_array(atom_coords, box = box_)
         
         
         d0 = np.transpose(d0)
@@ -184,11 +186,13 @@ def generate_PWDistances_torch(
                     xt.trajectory[k]
                     atoms   = xt.atoms[sel_idx]
                     atom_coords = atoms.positions
-                    dt         =  np.transpose(self_distance_array(atom_coords, box = ref.dimensions))
+                    box_ = traj.trajectory.ts.dimensions
+                    dt         =  np.transpose(self_distance_array(atom_coords, box = box_))
                 else:
                     xt.trajectory[k]
                     atom_coords = xt.atoms.positions
-                    dt         =  np.transpose(self_distance_array(atom_coords, box = ref.dimensions))
+                    box_ = traj.trajectory.ts.dimensions
+                    dt         =  np.transpose(self_distance_array(atom_coords, box = box_))
                     
                 Dt[k,int(i//25),j,:]  =  pt.tensor(dt, dtype=pt.float32, device=device)
 

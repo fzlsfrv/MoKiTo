@@ -1,0 +1,16 @@
+  0%|          | 0/100 [00:00<?, ?it/s]  1%|          | 1/100 [00:29<49:21, 29.91s/it]  2%|▏         | 2/100 [00:35<25:09, 15.40s/it]  3%|▎         | 3/100 [00:57<29:59, 18.55s/it]  4%|▍         | 4/100 [01:48<50:15, 31.41s/it]  5%|▌         | 5/100 [01:58<37:43, 23.83s/it]  6%|▌         | 6/100 [02:06<28:31, 18.21s/it]  7%|▋         | 7/100 [02:10<21:18, 13.75s/it]  8%|▊         | 8/100 [02:20<19:19, 12.61s/it]  9%|▉         | 9/100 [02:56<30:11, 19.91s/it] 10%|█         | 10/100 [03:16<29:39, 19.77s/it] 11%|█         | 11/100 [03:28<25:52, 17.45s/it]/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:2888: RuntimeWarning: invalid value encountered in subtract
+  X -= avg[:, None]
+ 11%|█         | 11/100 [03:30<28:20, 19.11s/it]
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica1/isokann_rs_runs/isokann_random_search_3.py", line 82, in <module>
+    best_hyperparams, best_val_loss  = random_search(D0,
+                                       ^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_2.py", line 204, in random_search
+    train_losses, val_losses, val_loss, convergence = power_method(X, Y,
+                                                      ^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_2.py", line 322, in power_method
+    slope = scipy.stats.linregress(old_chi, new_chi).slope
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/scipy/stats/_stats_py.py", line 10705, in linregress
+    raise ValueError("Cannot calculate a linear regression "
+ValueError: Cannot calculate a linear regression if all x values are identical

@@ -1,0 +1,21 @@
+  0%|          | 0/600 [00:00<?, ?it/s]  0%|          | 0/600 [00:02<?, ?it/s]
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica0/isokann_runs/isokann_1.py", line 112, in <module>
+    train_LOSS, val_LOSS, best_loss, convergence = power_method(D0,
+                                                   ^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 325, in power_method
+    train_loss, val_loss, best_loss = trainNN(net      = f_NN,
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 105, in trainNN
+    Y_train = normalize(Y_train)
+              ^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/nn/functional.py", line 5486, in normalize
+    denom = input.norm(p, dim, keepdim=True).clamp_min(eps).expand_as(input)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/_tensor.py", line 894, in norm
+    return torch.norm(self, p, dim, keepdim, dtype=dtype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/functional.py", line 1849, in norm
+    return torch.linalg.vector_norm(input, _p, _dim, keepdim, dtype=dtype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: Dimension out of range (expected to be in range of [-1, 0], but got 1)

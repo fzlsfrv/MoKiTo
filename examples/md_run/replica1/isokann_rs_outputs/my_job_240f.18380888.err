@@ -1,0 +1,15 @@
+  0%|          | 0/500 [00:00<?, ?it/s]  0%|          | 0/500 [00:05<?, ?it/s]
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica1/isokann_rs_runs/isokann_random_search_3.py", line 82, in <module>
+    best_hyperparams, best_val_loss  = random_search(D0,
+                                       ^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 221, in random_search
+    train_losses, val_losses, val_loss, convergence = power_method(X, Y,
+                                                      ^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 324, in power_method
+    train_loss, val_loss, best_loss = trainNN(net      = f_NN,
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 101, in trainNN
+    Y_mu = Y.mean(dim=(0,1))
+           ^^^^^^^^^^^^^^^^^
+IndexError: Dimension out of range (expected to be in range of [-1, 0], but got 1)

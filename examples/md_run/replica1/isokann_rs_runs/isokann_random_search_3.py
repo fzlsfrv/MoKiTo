@@ -30,7 +30,7 @@ in2cm = 1/2.54  # centimeters in inches
 #pt.manual_seed(0)
 
 # Read directory paths
-read_dirs_paths('../dir_paths.txt', globals())
+read_dirs_paths('../dir_paths_.txt', globals())
 
 device = pt.device("cuda" if pt.cuda.is_available() else "cpu")
 print("")
@@ -41,8 +41,8 @@ print(device)
 
 
 # Load initial and final states and convert to torch
-D0 = pt.load(out_trajectories1 + 'PWDistances_0_40f.pt', map_location=device)
-DT = pt.load(out_trajectories1 + 'PWDistances_t_40f.pt', map_location=device)
+D0 = pt.load(out_trajectories1 + 'PWDistances_0_40f-full.pt', map_location=device)
+DT = pt.load(out_trajectories1 + 'PWDistances_t_40f-full.pt', map_location=device)
 
 
 Ndims   = D0.shape[1]
@@ -63,16 +63,20 @@ print(D0.shape)
 
 
 NN_nodes = [
-    (Ndims, int(Ndims//2), int(Ndims//4), int(Ndims//8), int(Ndims//16), int(Ndims//32), 1),
+    (Ndims, int(Ndims//4), int(Ndims//8), int(Ndims//16), int(Ndims//32), 1),
     (Ndims, 4096, 2048, 1024, 256, 1),
-    (Ndims, int(Ndims//8), int(Ndims//16), 1)
-]
+    (Ndims, int(Ndims//8), int(Ndims//16), 1),
+    (Ndims, int(Ndims//2), int(Ndims//4), int(Ndims//8), 4096, 2048, 256, 1),
+    (Ndims, 256, 256, 256, 256, 256, 1),
+    (Ndims, 4096, 4096, 4096, 4096, 1)
+    
+        ]
 
-NN_lr = np.logspace(-4, -2, 10)        
+NN_lr = np.logspace(-3, -2, 10)        
 NN_wd = np.logspace(-6, -4, 8)        
-NN_bs = np.arange(100, 600, 100)           
+NN_bs = np.arange(50, 300, 50)           
 NN_patience = np.arange(2, 5)              
-NN_epochs = np.arange(5, 41, 5) 
+NN_epochs = np.arange(50, 100, 10) 
 NN_mu = np.linspace(0.6, 0.99, 5)
 
 NN_act_fun = ['leakyrelu']
@@ -87,6 +91,7 @@ best_hyperparams, best_val_loss  = random_search(D0,
                                                 NN_mu,
                                                 NN_patience,
                                                 NN_act_fun,
+                                                Niters = 100,
                                                 search_iterations=50,
                                                 test_size = 0.2,
                                                 out_dir = out_isokann)
@@ -100,6 +105,6 @@ print("The best validation loss is:",  best_val_loss)
 
 import pickle
 # Save to a file
-with open(out_isokann + 'hyperparameters_final_3.pkl', 'wb') as file:
+with open(out_isokann + 'hyperparameters_full.pkl', 'wb') as file:
     pickle.dump(best_hyperparams, file)
 

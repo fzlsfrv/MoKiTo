@@ -1,0 +1,11 @@
+/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/MDAnalysis/topology/PDBParser.py:295: UserWarning: PDB file is missing resid information.  Defaulted to '1'
+  warnings.warn("PDB file is missing resid information.  "
+/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/MDAnalysis/coordinates/DCD.py:165: DeprecationWarning: DCDReader currently makes independent timesteps by copying self.ts while other readers update self.ts inplace. This behavior will be changed in 3.0 to be the same as other readers. Read more at https://github.com/MDAnalysis/mdanalysis/issues/3889 to learn if this change in behavior might affect you.
+  warnings.warn("DCDReader currently makes independent timesteps"
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/calculate_PWDs.py", line 44, in <module>
+    generate_PWDistances_torch(
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/openmm/PWDs_module_3.py", line 65, in generate_PWDistances_torch
+    _, _, files = next(os.walk(out_final_states))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration

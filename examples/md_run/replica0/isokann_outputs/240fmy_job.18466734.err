@@ -1,0 +1,7 @@
+/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/useful_functions.py:17: UserWarning: File '../../dir_paths.txt' not found. No variables were created.
+  warnings.warn(f"File '{file_path}' not found. No variables were created.", UserWarning)
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica0/isokann_runs/isokann_1.py", line 43, in <module>
+    D0 = pt.load(out_trajectories1 + 'PWDistances_0_40f-full.pt', map_location=device)
+                 ^^^^^^^^^^^^^^^^^
+NameError: name 'out_trajectories1' is not defined

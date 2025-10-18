@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica1/isokann_rs_runs/isokann_random_search_3.py", line 21, in <module>
+    from src.isokann.modules3_2 import *
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_2.py", line 276
+    loop = tqdm(range(Niters))slurm_script.sh
+                              ^^^^^^^^^^^^
+SyntaxError: invalid syntax

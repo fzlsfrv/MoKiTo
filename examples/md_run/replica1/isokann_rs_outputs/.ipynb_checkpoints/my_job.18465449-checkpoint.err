@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica1/isokann_rs_runs/isokann_random_search_2.py", line 67, in <module>
+    (Ndism, 1024, 256, 1),
+     ^^^^^
+NameError: name 'Ndism' is not defined. Did you mean: 'Ndims'?

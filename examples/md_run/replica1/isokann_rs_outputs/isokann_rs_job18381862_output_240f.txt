@@ -1,0 +1,576 @@
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
+
+cuda
+torch.Size([240, 10, 46056])
+torch.Size([240, 46056])
+ 
+Nepochs = 80
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.007742636826811269
+Weight decay = 0.0005179474679231213
+Batch size = 200
+Momentum = 0.8925
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(1.1480, device='cuda:0')
+2025-10-17 15:07:33,660 Nepochs=80 nodes=[46056  1439  1439     1] lr=0.007742636826811269 wd=0.0005179474679231213 bs=200 patience=2 act=leakyrelu
+2025-10-17 15:07:33,661 Validation loss: 1.148012
+ 
+Nepochs = 90
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.0016681005372000592
+Weight decay = 0.001
+Batch size = 300
+Momentum = 0.6975
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.7873, device='cuda:0')
+2025-10-17 15:08:13,213 Nepochs=90 nodes=[46056  4096  2048  1024   256     1] lr=0.0016681005372000592 wd=0.001 bs=300 patience=2 act=leakyrelu
+2025-10-17 15:08:13,213 Validation loss: 0.787268
+ 
+Nepochs = 70
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.0027825594022071257
+Weight decay = 0.0003727593720314938
+Batch size = 500
+Momentum = 0.99
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(0.7610, device='cuda:0')
+2025-10-17 15:08:22,395 Nepochs=70 nodes=[46056  1439  1439     1] lr=0.0027825594022071257 wd=0.0003727593720314938 bs=500 patience=3 act=leakyrelu
+2025-10-17 15:08:22,396 Validation loss: 0.760984
+ 
+Nepochs = 60
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.007742636826811269
+Weight decay = 0.0005179474679231213
+Batch size = 500
+Momentum = 0.6975
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(0.9967, device='cuda:0')
+2025-10-17 15:08:31,619 Nepochs=60 nodes=[46056  1439  1439     1] lr=0.007742636826811269 wd=0.0005179474679231213 bs=500 patience=4 act=leakyrelu
+2025-10-17 15:08:31,619 Validation loss: 0.996663
+ 
+Nepochs = 80
+Nodes = [46056  2878  2878     1]
+Learning rate = 0.004641588833612777
+Weight decay = 0.00026826957952797245
+Batch size = 400
+Momentum = 0.6975
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(0.9049, device='cuda:0')
+2025-10-17 15:08:50,636 Nepochs=80 nodes=[46056  2878  2878     1] lr=0.004641588833612777 wd=0.00026826957952797245 bs=400 patience=3 act=leakyrelu
+2025-10-17 15:08:50,637 Validation loss: 0.904941
+ 
+Nepochs = 70
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.01
+Weight decay = 0.0005179474679231213
+Batch size = 100
+Momentum = 0.6
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(1.0384, device='cuda:0')
+2025-10-17 15:09:01,343 Nepochs=70 nodes=[46056  1439  1439     1] lr=0.01 wd=0.0005179474679231213 bs=100 patience=4 act=leakyrelu
+2025-10-17 15:09:01,343 Validation loss: 1.038353
+ 
+Nepochs = 70
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.01
+Weight decay = 0.001
+Batch size = 400
+Momentum = 0.6975
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(1.0260, device='cuda:0')
+2025-10-17 15:09:09,181 Nepochs=70 nodes=[46056  1439  1439     1] lr=0.01 wd=0.001 bs=400 patience=3 act=leakyrelu
+2025-10-17 15:09:09,181 Validation loss: 1.026019
+ 
+Nepochs = 70
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.004641588833612777
+Weight decay = 0.00026826957952797245
+Batch size = 300
+Momentum = 0.6
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(0.9937, device='cuda:0')
+2025-10-17 15:09:37,719 Nepochs=70 nodes=[46056  4096  2048  1024   256     1] lr=0.004641588833612777 wd=0.00026826957952797245 bs=300 patience=3 act=leakyrelu
+2025-10-17 15:09:37,719 Validation loss: 0.993664
+ 
+Nepochs = 90
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.004641588833612777
+Weight decay = 0.0005179474679231213
+Batch size = 300
+Momentum = 0.8925
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(0.8868, device='cuda:0')
+2025-10-17 15:10:07,544 Nepochs=90 nodes=[46056  5757  2878     1] lr=0.004641588833612777 wd=0.0005179474679231213 bs=300 patience=3 act=leakyrelu
+2025-10-17 15:10:07,544 Validation loss: 0.886807
+ 
+Nepochs = 80
+Nodes = [46056  2878  2878     1]
+Learning rate = 0.0027825594022071257
+Weight decay = 0.0005179474679231213
+Batch size = 400
+Momentum = 0.99
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(1.0552, device='cuda:0')
+2025-10-17 15:10:24,066 Nepochs=80 nodes=[46056  2878  2878     1] lr=0.0027825594022071257 wd=0.0005179474679231213 bs=400 patience=3 act=leakyrelu
+2025-10-17 15:10:24,067 Validation loss: 1.055211
+ 
+Nepochs = 80
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.0016681005372000592
+Weight decay = 0.001
+Batch size = 200
+Momentum = 0.6975
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(1.2266, device='cuda:0')
+2025-10-17 15:11:00,591 Nepochs=80 nodes=[46056  4096  2048  1024   256     1] lr=0.0016681005372000592 wd=0.001 bs=200 patience=2 act=leakyrelu
+2025-10-17 15:11:00,591 Validation loss: 1.226630
+ 
+Nepochs = 90
+Nodes = [46056  2878  2878     1]
+Learning rate = 0.005994842503189409
+Weight decay = 0.0003727593720314938
+Batch size = 200
+Momentum = 0.6
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(0.6004, device='cuda:0')
+2025-10-17 15:11:20,681 Nepochs=90 nodes=[46056  2878  2878     1] lr=0.005994842503189409 wd=0.0003727593720314938 bs=200 patience=4 act=leakyrelu
+2025-10-17 15:11:20,682 Validation loss: 0.600351
+ 
+Nepochs = 90
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.001
+Weight decay = 0.00019306977288832496
+Batch size = 400
+Momentum = 0.8925
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(0.8142, device='cuda:0')
+2025-10-17 15:13:04,882 Nepochs=90 nodes=[46056 11514  5757  2878  1439     1] lr=0.001 wd=0.00019306977288832496 bs=400 patience=3 act=leakyrelu
+2025-10-17 15:13:04,884 Validation loss: 0.814226
+ 
+Nepochs = 70
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.0021544346900318843
+Weight decay = 0.00013894954943731373
+Batch size = 500
+Momentum = 0.6
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.8889, device='cuda:0')
+2025-10-17 15:13:41,031 Nepochs=70 nodes=[46056  5757  2878     1] lr=0.0021544346900318843 wd=0.00013894954943731373 bs=500 patience=2 act=leakyrelu
+2025-10-17 15:13:41,031 Validation loss: 0.888919
+ 
+Nepochs = 50
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.001
+Weight decay = 0.00013894954943731373
+Batch size = 400
+Momentum = 0.8925
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(1.0972, device='cuda:0')
+2025-10-17 15:14:12,925 Nepochs=50 nodes=[46056  5757  2878     1] lr=0.001 wd=0.00013894954943731373 bs=400 patience=2 act=leakyrelu
+2025-10-17 15:14:12,925 Validation loss: 1.097240
+ 
+Nepochs = 70
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.007742636826811269
+Weight decay = 0.00026826957952797245
+Batch size = 200
+Momentum = 0.6
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(1.0415, device='cuda:0')
+2025-10-17 15:14:20,503 Nepochs=70 nodes=[46056  1439  1439     1] lr=0.007742636826811269 wd=0.00026826957952797245 bs=200 patience=2 act=leakyrelu
+2025-10-17 15:14:20,503 Validation loss: 1.041548
+ 
+Nepochs = 50
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.001
+Weight decay = 0.00013894954943731373
+Batch size = 500
+Momentum = 0.99
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.8605, device='cuda:0')
+2025-10-17 15:14:51,871 Nepochs=50 nodes=[46056  5757  2878     1] lr=0.001 wd=0.00013894954943731373 bs=500 patience=2 act=leakyrelu
+2025-10-17 15:14:51,872 Validation loss: 0.860525
+ 
+Nepochs = 50
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.001
+Weight decay = 0.0007196856730011522
+Batch size = 500
+Momentum = 0.6
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.7050, device='cuda:0')
+2025-10-17 15:16:43,573 Nepochs=50 nodes=[46056 11514  5757  2878  1439     1] lr=0.001 wd=0.0007196856730011522 bs=500 patience=2 act=leakyrelu
+2025-10-17 15:16:43,574 Validation loss: 0.705027
+ 
+Nepochs = 90
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.003593813663804626
+Weight decay = 0.0003727593720314938
+Batch size = 500
+Momentum = 0.99
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(0.6626, device='cuda:0')
+2025-10-17 15:17:13,787 Nepochs=90 nodes=[46056  4096  2048  1024   256     1] lr=0.003593813663804626 wd=0.0003727593720314938 bs=500 patience=4 act=leakyrelu
+2025-10-17 15:17:13,787 Validation loss: 0.662622
+ 
+Nepochs = 50
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.01
+Weight decay = 0.00026826957952797245
+Batch size = 300
+Momentum = 0.6975
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(0.5603, device='cuda:0')
+2025-10-17 15:17:22,870 Nepochs=50 nodes=[46056  1439  1439     1] lr=0.01 wd=0.00026826957952797245 bs=300 patience=4 act=leakyrelu
+2025-10-17 15:17:22,870 Validation loss: 0.560338
+ 
+Nepochs = 70
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.0016681005372000592
+Weight decay = 0.00013894954943731373
+Batch size = 400
+Momentum = 0.8925
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(1.0025, device='cuda:0')
+2025-10-17 15:17:52,327 Nepochs=70 nodes=[46056  4096  2048  1024   256     1] lr=0.0016681005372000592 wd=0.00013894954943731373 bs=400 patience=2 act=leakyrelu
+2025-10-17 15:17:52,327 Validation loss: 1.002533
+ 
+Nepochs = 50
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.001291549665014884
+Weight decay = 0.0001
+Batch size = 100
+Momentum = 0.99
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(1.1874, device='cuda:0')
+2025-10-17 15:18:37,773 Nepochs=50 nodes=[46056  5757  2878     1] lr=0.001291549665014884 wd=0.0001 bs=100 patience=4 act=leakyrelu
+2025-10-17 15:18:37,786 Validation loss: 1.187381
+ 
+Nepochs = 80
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.004641588833612777
+Weight decay = 0.0001
+Batch size = 300
+Momentum = 0.99
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(1.1683, device='cuda:0')
+2025-10-17 15:18:45,313 Nepochs=80 nodes=[46056  1439  1439     1] lr=0.004641588833612777 wd=0.0001 bs=300 patience=3 act=leakyrelu
+2025-10-17 15:18:45,318 Validation loss: 1.168326
+ 
+Nepochs = 90
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.01
+Weight decay = 0.00013894954943731373
+Batch size = 300
+Momentum = 0.7949999999999999
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(0.5285, device='cuda:0')
+2025-10-17 15:19:06,916 Nepochs=90 nodes=[46056  4096  2048  1024   256     1] lr=0.01 wd=0.00013894954943731373 bs=300 patience=3 act=leakyrelu
+2025-10-17 15:19:06,918 Validation loss: 0.528463
+ 
+Nepochs = 90
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.0027825594022071257
+Weight decay = 0.0005179474679231213
+Batch size = 400
+Momentum = 0.6975
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(0.9234, device='cuda:0')
+2025-10-17 15:19:18,002 Nepochs=90 nodes=[46056  1439  1439     1] lr=0.0027825594022071257 wd=0.0005179474679231213 bs=400 patience=4 act=leakyrelu
+2025-10-17 15:19:18,002 Validation loss: 0.923396
+ 
+Nepochs = 50
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.004641588833612777
+Weight decay = 0.0005179474679231213
+Batch size = 200
+Momentum = 0.8925
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.9737, device='cuda:0')
+2025-10-17 15:19:25,557 Nepochs=50 nodes=[46056  1439  1439     1] lr=0.004641588833612777 wd=0.0005179474679231213 bs=200 patience=2 act=leakyrelu
+2025-10-17 15:19:25,557 Validation loss: 0.973700
+ 
+Nepochs = 60
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.001
+Weight decay = 0.0003727593720314938
+Batch size = 100
+Momentum = 0.8925
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.8189, device='cuda:0')
+2025-10-17 15:19:36,789 Nepochs=60 nodes=[46056  1439  1439     1] lr=0.001 wd=0.0003727593720314938 bs=100 patience=2 act=leakyrelu
+2025-10-17 15:19:36,790 Validation loss: 0.818893
+ 
+Nepochs = 90
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.003593813663804626
+Weight decay = 0.001
+Batch size = 100
+Momentum = 0.7949999999999999
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.9248, device='cuda:0')
+2025-10-17 15:20:03,714 Nepochs=90 nodes=[46056  4096  2048  1024   256     1] lr=0.003593813663804626 wd=0.001 bs=100 patience=2 act=leakyrelu
+2025-10-17 15:20:03,714 Validation loss: 0.924817
+ 
+Nepochs = 80
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.0021544346900318843
+Weight decay = 0.00026826957952797245
+Batch size = 400
+Momentum = 0.6975
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(1.1361, device='cuda:0')
+2025-10-17 15:20:47,525 Nepochs=80 nodes=[46056  4096  2048  1024   256     1] lr=0.0021544346900318843 wd=0.00026826957952797245 bs=400 patience=4 act=leakyrelu
+2025-10-17 15:20:47,525 Validation loss: 1.136075
+ 
+Nepochs = 90
+Nodes = [46056  2878  2878     1]
+Learning rate = 0.004641588833612777
+Weight decay = 0.00019306977288832496
+Batch size = 300
+Momentum = 0.99
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(0.9601, device='cuda:0')
+2025-10-17 15:21:05,679 Nepochs=90 nodes=[46056  2878  2878     1] lr=0.004641588833612777 wd=0.00019306977288832496 bs=300 patience=4 act=leakyrelu
+2025-10-17 15:21:05,680 Validation loss: 0.960140
+ 
+Nepochs = 70
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.007742636826811269
+Weight decay = 0.0003727593720314938
+Batch size = 300
+Momentum = 0.6
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(1.0821, device='cuda:0')
+2025-10-17 15:21:13,840 Nepochs=70 nodes=[46056  1439  1439     1] lr=0.007742636826811269 wd=0.0003727593720314938 bs=300 patience=2 act=leakyrelu
+2025-10-17 15:21:13,840 Validation loss: 1.082120
+ 
+Nepochs = 50
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.004641588833612777
+Weight decay = 0.001
+Batch size = 100
+Momentum = 0.99
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.9209, device='cuda:0')
+2025-10-17 15:21:21,598 Nepochs=50 nodes=[46056  1439  1439     1] lr=0.004641588833612777 wd=0.001 bs=100 patience=2 act=leakyrelu
+2025-10-17 15:21:21,598 Validation loss: 0.920866
+ 
+Nepochs = 50
+Nodes = [46056  2878  2878     1]
+Learning rate = 0.0021544346900318843
+Weight decay = 0.00026826957952797245
+Batch size = 200
+Momentum = 0.8925
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(1.1091, device='cuda:0')
+2025-10-17 15:21:39,885 Nepochs=50 nodes=[46056  2878  2878     1] lr=0.0021544346900318843 wd=0.00026826957952797245 bs=200 patience=3 act=leakyrelu
+2025-10-17 15:21:39,886 Validation loss: 1.109086
+ 
+Nepochs = 70
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.007742636826811269
+Weight decay = 0.0001
+Batch size = 500
+Momentum = 0.6975
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(1.3741, device='cuda:0')
+2025-10-17 15:21:47,750 Nepochs=70 nodes=[46056  1439  1439     1] lr=0.007742636826811269 wd=0.0001 bs=500 patience=2 act=leakyrelu
+2025-10-17 15:21:47,750 Validation loss: 1.374119
+ 
+Nepochs = 50
+Nodes = [46056  1439  1439     1]
+Learning rate = 0.0021544346900318843
+Weight decay = 0.0003727593720314938
+Batch size = 100
+Momentum = 0.6
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(1.0589, device='cuda:0')
+2025-10-17 15:22:02,943 Nepochs=50 nodes=[46056  1439  1439     1] lr=0.0021544346900318843 wd=0.0003727593720314938 bs=100 patience=4 act=leakyrelu
+2025-10-17 15:22:02,944 Validation loss: 1.058876
+ 
+Nepochs = 60
+Nodes = [46056 11514  5757  2878  1439     1]
+Learning rate = 0.003593813663804626
+Weight decay = 0.00019306977288832496
+Batch size = 200
+Momentum = 0.6975
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(1.0409, device='cuda:0')
+2025-10-17 15:23:13,340 Nepochs=60 nodes=[46056 11514  5757  2878  1439     1] lr=0.003593813663804626 wd=0.00019306977288832496 bs=200 patience=2 act=leakyrelu
+2025-10-17 15:23:13,343 Validation loss: 1.040913
+ 
+Nepochs = 80
+Nodes = [46056  2878  2878     1]
+Learning rate = 0.0027825594022071257
+Weight decay = 0.00019306977288832496
+Batch size = 400
+Momentum = 0.6975
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(1.2319, device='cuda:0')
+2025-10-17 15:23:34,397 Nepochs=80 nodes=[46056  2878  2878     1] lr=0.0027825594022071257 wd=0.00019306977288832496 bs=400 patience=3 act=leakyrelu
+2025-10-17 15:23:34,397 Validation loss: 1.231882
+ 
+Nepochs = 60
+Nodes = [46056  2878  2878     1]
+Learning rate = 0.0016681005372000592
+Weight decay = 0.00019306977288832496
+Batch size = 200
+Momentum = 0.6
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.6634, device='cuda:0')
+2025-10-17 15:23:55,595 Nepochs=60 nodes=[46056  2878  2878     1] lr=0.0016681005372000592 wd=0.00019306977288832496 bs=200 patience=2 act=leakyrelu
+2025-10-17 15:23:55,595 Validation loss: 0.663433
+ 
+Nepochs = 80
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.01
+Weight decay = 0.0003727593720314938
+Batch size = 400
+Momentum = 0.6
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.8811, device='cuda:0')
+2025-10-17 15:24:18,039 Nepochs=80 nodes=[46056  4096  2048  1024   256     1] lr=0.01 wd=0.0003727593720314938 bs=400 patience=2 act=leakyrelu
+2025-10-17 15:24:18,039 Validation loss: 0.881118
+ 
+Nepochs = 60
+Nodes = [46056  2878  2878     1]
+Learning rate = 0.0021544346900318843
+Weight decay = 0.0001
+Batch size = 300
+Momentum = 0.7949999999999999
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(0.8815, device='cuda:0')
+2025-10-17 15:24:37,621 Nepochs=60 nodes=[46056  2878  2878     1] lr=0.0021544346900318843 wd=0.0001 bs=300 patience=4 act=leakyrelu
+2025-10-17 15:24:37,659 Validation loss: 0.881529
+ 
+Nepochs = 90
+Nodes = [46056  4096  2048  1024   256     1]
+Learning rate = 0.007742636826811269
+Weight decay = 0.0001
+Batch size = 300
+Momentum = 0.7949999999999999
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(0.8805, device='cuda:0')
+2025-10-17 15:25:03,579 Nepochs=90 nodes=[46056  4096  2048  1024   256     1] lr=0.007742636826811269 wd=0.0001 bs=300 patience=4 act=leakyrelu
+2025-10-17 15:25:03,585 Validation loss: 0.880498
+ 
+Nepochs = 80
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.001291549665014884
+Weight decay = 0.0005179474679231213
+Batch size = 400
+Momentum = 0.6975
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(0.9203, device='cuda:0')
+2025-10-17 15:25:44,273 Nepochs=80 nodes=[46056  5757  2878     1] lr=0.001291549665014884 wd=0.0005179474679231213 bs=400 patience=4 act=leakyrelu
+2025-10-17 15:25:44,277 Validation loss: 0.920283
+ 
+Nepochs = 60
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.01
+Weight decay = 0.00013894954943731373
+Batch size = 200
+Momentum = 0.99
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(1.1387, device='cuda:0')
+2025-10-17 15:26:12,414 Nepochs=60 nodes=[46056  5757  2878     1] lr=0.01 wd=0.00013894954943731373 bs=200 patience=3 act=leakyrelu
+2025-10-17 15:26:12,417 Validation loss: 1.138706
+ 
+Nepochs = 50
+Nodes = [46056  2878  2878     1]
+Learning rate = 0.01
+Weight decay = 0.00013894954943731373
+Batch size = 400
+Momentum = 0.99
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(1.2875, device='cuda:0')
+2025-10-17 15:26:25,014 Nepochs=50 nodes=[46056  2878  2878     1] lr=0.01 wd=0.00013894954943731373 bs=400 patience=2 act=leakyrelu
+2025-10-17 15:26:25,019 Validation loss: 1.287519
+ 
+Nepochs = 70
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.0027825594022071257
+Weight decay = 0.0005179474679231213
+Batch size = 400
+Momentum = 0.6
+Patience = 3
+Activation function = leakyrelu
+Validation loss: tensor(1.0546, device='cuda:0')
+2025-10-17 15:27:04,719 Nepochs=70 nodes=[46056  5757  2878     1] lr=0.0027825594022071257 wd=0.0005179474679231213 bs=400 patience=3 act=leakyrelu
+2025-10-17 15:27:04,742 Validation loss: 1.054551
+ 
+Nepochs = 50
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.01
+Weight decay = 0.0007196856730011522
+Batch size = 200
+Momentum = 0.6
+Patience = 2
+Activation function = leakyrelu
+Validation loss: tensor(0.8719, device='cuda:0')
+2025-10-17 15:27:34,637 Nepochs=50 nodes=[46056  5757  2878     1] lr=0.01 wd=0.0007196856730011522 bs=200 patience=2 act=leakyrelu
+2025-10-17 15:27:34,637 Validation loss: 0.871941
+ 
+Nepochs = 50
+Nodes = [46056  5757  2878     1]
+Learning rate = 0.0021544346900318843
+Weight decay = 0.00019306977288832496
+Batch size = 300
+Momentum = 0.7949999999999999
+Patience = 4
+Activation function = leakyrelu
+Validation loss: tensor(0.5781, device='cuda:0')
+2025-10-17 15:28:08,740 Nepochs=50 nodes=[46056  5757  2878     1] lr=0.0021544346900318843 wd=0.00019306977288832496 bs=300 patience=4 act=leakyrelu
+2025-10-17 15:28:08,740 Validation loss: 0.578120

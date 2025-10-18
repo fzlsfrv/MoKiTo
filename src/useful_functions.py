@@ -85,9 +85,16 @@ def check_directories(out_dir,out_trajectories2,out_trajectories3,out_trajectori
     print(" ")
 
 
-def get_latest_state_file(folder_path):
+def get_latest(folder_path, state_file=False, chk_folder=False, iso_outs=False, create_new=False):
     # Regex to match files like x0_123.xml
-    pattern = re.compile(r"x0_(\d+)\.xml$")
+    if state_file:
+        pattern = re.compile(r"x0_(\d+)\.xml$")
+    
+    elif chk_folder:
+        pattern = re.compile(r"chk_(\d+)$")
+    
+    elif iso_outs:
+        pattern = re.compile(r"outs_(\d+)$")
 
     latest_file = None
     latest_num = -1
@@ -99,6 +106,19 @@ def get_latest_state_file(folder_path):
             if num > latest_num:
                 latest_num = num
                 latest_file = filename
+    
+    if chk_folder and create_new:
+        next_num = int(latest_num + 1)
+        new_path = os.path.join(folder_path, f"chk_{next_num}")
+        os.makedirs(new_path, exist_ok=True)
+        return new_path
+        
+    elif iso_outs and create_new:
+        next_num = int(latest_num + 1)
+        new_path = os.path.join(folder_path, f"outs_{next_num}")
+        os.makedirs(new_path, exist_ok=True)
+        return new_path
+    
 
     if latest_file:
         return os.path.join(folder_path, latest_file)

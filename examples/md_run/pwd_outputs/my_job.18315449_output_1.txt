@@ -1,0 +1,29 @@
+ 
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_[0-5]*/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_[0-5]*/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output_general/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output_general/mokito/
+/scratch/htc/fsafarov/2cm2_simulation/md2/output_general/isokann/ already exists!
+ 
+ 
+ 
+This will create torch files containing PW distances using only BACKBONE atoms
+ 
+Number of initial states: 6000
+Number of atoms (no water): 70362
+I am generating the relevant coordinate...
+len(rel_coords)==2, then the relevant coordinate is a DISTANCE between 2 atoms
+ 
+Number of backbone atoms + ligand: 304
+Number of pairwise distances between BACKBONE+LIGAND atoms: 46056
+I am creating the tensor with the initial states...
+Shape of D0?
+Npoints, Ndims
+torch.Size([240, 46056])
+ 
+dcdplugin) detected standard 32-bit DCD file of native endianness
+dcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)

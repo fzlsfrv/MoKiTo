@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica0/isokann_runs/isokann_1.py", line 58, in <module>
+    Dt = DT[frame,:,:,:]
+         ~~^^^^^^^^^^^^^
+IndexError: too many indices for tensor of dimension 2

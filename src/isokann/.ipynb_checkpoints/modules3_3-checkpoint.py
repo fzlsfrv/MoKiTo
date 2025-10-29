@@ -54,6 +54,9 @@ class NeuralNetwork(pt.nn.Module):
             self.activation  = pt.nn.ReLU()
         elif activation_function == 'leakyrelu': 
             self.activation  = pt.nn.LeakyReLU(LeakyReLU_par)
+        elif activation_function == 'gelu': 
+            self.activation  = pt.nn.GELU()
+        
         
         self.activation2  = pt.nn.Softplus(10)
         
@@ -95,6 +98,7 @@ def trainNN(net,
     
     # Define the optimizer
     optimizer = pt.optim.SGD(net.parameters(), lr=lr, weight_decay=wd, momentum = momentum, nesterov=True)
+    #optimizer = pt.optim.AdamW(net.parameters(), lr=lr, weight_decay=wd)
     #optimizer = pt.optim.Adam(net.parameters(), lr=lr, weight_decay=wd)
     #optimizer = pt.optim.SGD(net.parameters(), lr=lr, weight_decay=wd)
 
@@ -205,7 +209,7 @@ def random_search(
 
         f_NN = NeuralNetwork( Nodes = nodes, activation_function = act_fun ).to(device)
 
-        train_losses, val_losses, val_loss, convergence = power_method(X, Y,
+        train_losses, val_losses, val_loss, convergence, xtrema = power_method(X, Y,
                                                           f_NN,
                                                           scale_and_shift,
                                                           Niters = Niters,
@@ -273,6 +277,8 @@ def power_method(   pt_x0,
     train_LOSS = np.empty(0, dtype = object)
     val_LOSS   = np.empty(0, dtype = object)
     convergence = []
+    chi_xtrema = []
+
 
     if   print_eta == False:
         loop = range(Niters)
@@ -290,7 +296,7 @@ def power_method(   pt_x0,
                 #)
            # logging.info(f"old_chi: {old_chi[0:10]}")
         
-        xt_loader = DataLoader(pt_xt, batch_size=int(batch_size), shuffle=True)
+        xt_loader = DataLoader(pt_xt, batch_size=int(batch_size), shuffle=False)
         chi_batches = []
         
         
@@ -303,11 +309,12 @@ def power_method(   pt_x0,
                 
         pt_chi = pt.cat(chi_batches, dim=0)
 
-
+        
         pt_y    =  pt.mean(pt_chi, axis=1)
+        
         pt_y    =  scale_and_shift(pt_y).to(device).detach()
 
-        
+        f_NN.train()
         train_loss, val_loss, best_loss = trainNN(net      = f_NN,
                                                   lr       = lr,
                                                   wd       = wd,
@@ -328,11 +335,10 @@ def power_method(   pt_x0,
             val_LOSS             = np.append(val_LOSS, val_loss)
 
         new_chi   = f_NN(pt_x0).cpu().detach().numpy()
-        
+  
+        chi_xtrema.append(new_chi.max())
 
-
-
-    return train_LOSS, val_LOSS, best_loss, convergence
+    return train_LOSS, val_LOSS, best_loss, convergence, chi_xtrema
 
 def exit_rates_from_chi(tau, chi_0, chi_tau):
     

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/calculate_PWDs.py", line 17, in <module>
+    from src.openmm.PWDs_module_1 import generate_PWDistances_torch
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/openmm/PWDs_module_1.py", line 122
+    d0 = np.zeros((Ndims,int(Npoints))
+                 ^
+SyntaxError: '(' was never closed

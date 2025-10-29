@@ -61,8 +61,6 @@ Dt_n = (Dt - xt_mean) / (xt_std + 1e-8)
 Ndims   = D0.shape[1]
 
 
-
-
 print(Dt.shape)
 print(D0.shape)
 

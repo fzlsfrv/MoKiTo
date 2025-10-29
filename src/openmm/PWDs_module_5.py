@@ -13,8 +13,12 @@ from openmm import *
 from openmm.app import *
 from openmm.unit import *
 from scipy.spatial.distance import pdist
-import pdb_numpy
-import glob
+from MDAnalysis.analysis.distances import*
+
+sys.path.append(os.path.abspath('../'))
+from src.useful_functions import*
+
+
 
 print(" ")
 device = pt.device("cuda" if pt.cuda.is_available() else "cpu")
@@ -30,10 +34,10 @@ def generate_pairs(N):
 def generate_PWDistances_torch(
                         inp_dir  =  'input/',
                         out_dir  =  'output/',
+                        out_final_states = 'output/final_states/',
                         iso_dir  =  'ISOKANN_files/',
                         pdbfile_solute    = 'pdbfile_no_water.pdb', 
-                        pdbfile_water     = 'pdbfile_water.pdb', 
-                        prmtopfile_solute = "prmtopfile_no_water.prmtop", 
+                        pdbfile_water     = 'pdbfile_water.pdb',  
                         file_traj_water   = "trajectory_water.dcd",
                         file_traj_solute  = "trajectory.dcd",
                         frames     = np.array([0,1,2,3,4,5,6,7,8,9]),
@@ -51,39 +55,21 @@ def generate_PWDistances_torch(
         print(" ")
     
     # Starting points (number of files in input/initial_states)
-
-    # traj_files = glob.glob(os.path.join(out_dir, file_traj_water))
-    # traj_files = sorted(traj_files)
-    # traj_list = [md.load_dcd(f, top=inp_dir + pdbfile_water) for f in traj_files]
-    # traj_concat = md.join(traj_list)
-    # traj_concat.save_dcd(os.path.join(iso_dir, 'trajectory_water_all.dcd'))
-    # print("Combined trajectory saved as trajectory_water_all.dcd")
-
-    
-    traj     = md.load(iso_dir + 'trajectory_water_all.dcd', top = inp_dir + pdbfile_water)   
-
-    Npoints  = traj.n_frames
+    traj      = mda.Universe(inp_dir + pdbfile_water, out_dir + file_traj_water) 
+    trj = md.load(out_dir + file_traj_water, top= inp_dir + pdbfile_water)
+    ref = mda.Universe(inp_dir + pdbfile_water)
+    Npoints  = traj.trajectory.n_frames
    
     print("Number of initial states:", Npoints)
-
-    #get the final state numbers
-    final_dirs = glob.glob(os.path.join(out_dir, 'final_states'))
-    files = []
-    for d in final_dirs:
-        _, _, f = next(os.walk(d))
-        files.extend([os.path.join(d, x) for x in f])
-    files = sorted(files)
-
-        
-    Nfinpoints = int(( len(files) - 1 ) / Npoints)
-    print("Number of final states:", Nfinpoints)
+    
+    # _, _, files = next(os.walk(out_final_states))
+    # Nfinpoints = int(( len(files) - 1 ) / Npoints)
+    # print("Number of final states:", Nfinpoints)
     
     #from MDAnalysis.analysis.bat import BAT
     #R = BAT(traj)
     
-    
-    pdb = mda.Universe(inp_dir + pdbfile_solute)
-    Natoms = pdb.atoms.n_atoms
+    Natoms = ref.atoms.n_atoms
     print("Number of atoms (no water):", Natoms)
     
     
@@ -91,27 +77,36 @@ def generate_PWDistances_torch(
     print("I am generating the relevant coordinate...")
     if len(rel_coords[0])==2:
         print("len(rel_coords)==2, then the relevant coordinate is a DISTANCE between 2 atoms")
-        r        = np.squeeze(md.compute_distances(traj, rel_coords, periodic=periodic))
+        r        = np.squeeze(md.compute_distances(trj, rel_coords, periodic=True))
     elif len(rel_coords[0])==3:
         print("len(rel_coords)==3, then the relevant coordinate is an ANGLE between 3 atoms")
-        r        = np.squeeze(md.compute_angles(traj, rel_coords, periodic=True))
+        r        = np.squeeze(md.compute_angles(trj, rel_coords, periodic=True))
     elif len(rel_coords[0])==4:
         print("len(rel_coords)==4, then the relevant coordinate is a DIHEDRAL between 4 atoms")
-        r        = np.squeeze(md.compute_dihedrals(traj, rel_coords, periodic=True))
+        r        = np.squeeze(md.compute_dihedrals(trj, rel_coords, periodic=True))
         
-    np.savetxt(iso_dir + 'R0.txt', r)
+    np.savetxt(iso_dir + 'R0_1.txt', r)
     
     print(" ")
     
     if BB == True:
+    
+        u = mda.Universe(inp_dir + pdbfile_water)
+        calphas = u.select_atoms("name CA")
+        n_calpha = calphas.n_atoms
+        bb_idx = calphas.indices
         
-        coor = pdb_numpy.Coor(inp_dir + pdbfile_water)
-        bb_idx = coor.get_index_select("protein and name CA")
-        kb8_idx = coor.get_index_select("resname KB8 and not name H*")        
+        lig = u.select_atoms("resname KB8 and not element H") 
+        n_lig = lig.n_atoms
+        kb8_idx = lig.indices
         sel_idx = np.unique(np.concatenate([bb_idx, kb8_idx]))
-
         
-
+        
+        
+        #coor = pdb_numpy.Coor(inp_dir + pdbfile_water)
+        #bb_idx = coor.get_index_select("protein and name CA")
+        #kb8_idx = coor.get_index_select("resname KB8")        
+        #sel_idx = np.unique(np.concatenate([bb_idx, kb8_idx]))
 
         
         pairs   =   generate_pairs(len(sel_idx))
@@ -124,25 +119,37 @@ def generate_PWDistances_torch(
         print("I am creating the tensor with the initial states...")
         #d0  =  md.compute_distances(traj.atom_slice(bb), pairs, periodic=False)
 
-        d0 = np.zeros((Npoints, Ndims))
-        for i in tqdm(range(10)):
-            d0[i] = pdist(traj.atom_slice(sel_idx)[i].xyz[0,:,:])
-            
+        d0 = np.zeros((Ndims, Npoints))
+        for i in tqdm(range(int(Npoints))):
+            traj.trajectory[i]
+            atoms   =  traj.atoms[sel_idx]
+            atom_coords = atoms.positions
+            box_ = traj.trajectory.ts.dimensions
+            d0[:, i] = self_distance_array(atom_coords, box = box_)
+        
+        
+        d0 = np.transpose(d0)
         D0  =  pt.tensor(d0, dtype=pt.float32, device=device)
+      
         
     else:
         pairs   =   generate_pairs(Natoms)
         Ndims   =   len(pairs)
         print("Number of pairwise distances between ALL atoms:", Ndims)
             
-        d0 = np.zeros((Npoints, Ndims))
-        for i in tqdm(range(10)):
-            d0[i,:] = pdist(traj[i].xyz[0,0:Natoms,:])
-
+        d0 = np.zeros((Ndims, Npoints))
+        for i in tqdm(range(Npoints)):
+            traj.trajectory[i]
+            atom_coords = traj.atoms.positions
+            box_ = traj.trajectory.ts.dimensions
+            d0[:, int(i)] = self_distance_array(atom_coords, box = box_)
+        
+        
+        d0 = np.transpose(d0)
         D0  =  pt.tensor(d0, dtype=pt.float32, device=device)
     
     
-    pt.save(D0, iso_dir + 'PWDistances_0_1.pt')
+    pt.save(D0, iso_dir + 'PWDistances_0_full_1.pt')
     
     
     print('Shape of D0?')
@@ -151,36 +158,47 @@ def generate_PWDistances_torch(
     print(" ")    
     
     # Load one trajectory to calculate number of frames
-    # print("I am creating the tensor with the final states...")
-    # xt         =  md.load(out_dir + "final_states/xt_0_r0.dcd", 
-    #                               top = inp_dir + pdbfile_water)
-    # print("The shape of a file xt_i_rj.dcd is", xt.xyz.shape)
-    # Ntimesteps = xt.n_frames
-    
-    
+    fs_folders = multiple_dirs(out_final_states, fetch_files=False)
+    print("I am creating the tensor with the final states...")
+    xt         =  mda.Universe(inp_dir + pdbfile_water, fs_folders[0] + "xt_0_r0.dcd")
+
+    Nfinpoints = 10
     Ntimesteps = len(frames)
     
-    Dt = pt.zeros((Ntimesteps, Npoints, Nfinpoints, Ndims), dtype = pt.float32, device=device)
-    
-    for l in range(6):
-        for i in tqdm(range(Npoints)):
-            
-            for j in range(Nfinpoints):
-                xt      =  md.load(f'/scratch/htc/fsafarov/2cm2_simulation/md2/output_{l}/trajectories/openmm_files/' + "final_states/xt_" + str(i) + "_r" + str(j) + ".dcd", 
-                                      top = inp_dir + pdbfile_water)
-                for k in range(Ntimesteps):
-                    frame = frames[k]
-                    if BB == True:
-                        #dt         =  md.compute_distances(xt.atom_slice(bb)[frame], pairs, periodic=False)
-                        dt         =  pdist(xt.atom_slice(sel_idx)[frame].xyz[0,:,:])
-                    else:
-                        #dt         =  md.compute_distances(xt[frame], pairs, periodic=False)
-                        dt         =  pdist(xt[frame].xyz[0,0:Natoms,:])
-                        
-                    Dt[k,i,j,:]  =  pt.tensor(dt, dtype=pt.float32, device=device)
 
     
-    pt.save(Dt, iso_dir + 'PWDistances_t_1.pt')
+    d = int(Npoints//6) 
+    for f in range(len(fs_folders)):
+        Dt = pt.zeros((Ntimesteps, int(Npoints//6), Nfinpoints, Ndims), dtype = pt.float32, device=device)
+        print(f"fs_folders[{f}] =", fs_folders[f])
+        print(" ")
+        for i in tqdm(range(int(Npoints//6))):
+        
+                    
+            for j in range(Nfinpoints):
+            
+                                
+                
+                dcd_path = os.path.join(fs_folders[f], f"xt_{i}_r{j}_aligned.dcd")
+                xt      =  mda.Universe(os.path.join(inp_dir, pdbfile_water), dcd_path)
+                
+                for k in range(Ntimesteps):
+                    xt.trajectory[k]
+                    if BB == True:
+                        atoms   = xt.atoms[sel_idx]
+                        atom_coords = atoms.positions
+                        
+                    else:
+                        atom_coords = xt.atoms.positions
+
+                    
+                    box_ = xt.trajectory.ts.dimensions
+                    dt         =  np.transpose(self_distance_array(atom_coords, box = box_))
+                        
+                    Dt[k,i,j,:]  =  pt.tensor(dt, dtype=pt.float32, device=device)
+                
+        pt.save(Dt, iso_dir + f'PWDistances_t_full_{f}.pt')
+                                
     
     print(" ")
     print('Shape of Dt?')

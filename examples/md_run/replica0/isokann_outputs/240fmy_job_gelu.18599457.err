@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica0/isokann_runs/isokann_1.py", line 71, in <module>
+    print(Dt_n[9, 10, 9, :20])
+          ~~~~^^^^^^^^^^^^^^^
+IndexError: too many indices for tensor of dimension 3

@@ -1,25 +1,24 @@
 Created variables:
 inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
-out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_0/trajectories/
-out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/
-out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/initial_states/
-out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output_1/trajectories/openmm_files/final_states/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/final_states/
 out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
 out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
 
 cuda
-torch.Size([40, 10, 46056])
-torch.Size([40, 46056])
-  0%|          | 0/50 [00:00<?, ?it/s] 
-Nepochs = 10
-Nodes = [46056 30704 15352     1]
-Learning rate = 0.00556
-Weight decay = 0.0008572857142857144
-Batch size = 100
-Patience = 2
-Activation function = leakyrelu
-Validation loss: tensor(4.0420e+12, device='cuda:0')
-Convergence: -1.5764528958152002
-2025-10-14 17:19:24,253 Nepochs=10 nodes=[46056 30704 15352     1] lr=0.00556 wd=0.0008572857142857144 bs=100 patience=2 act=leakyrelu
-2025-10-14 17:19:24,253 Validation loss: 4042041851904.000000  Convergence: -1.5765
-  2%|▏         | 1/50 [01:29<1:13:19, 89.78s/it]slurmstepd-htc-gpu023: error: *** JOB 18237903 ON htc-gpu023 CANCELLED AT 2025-10-14T17:20:59 ***
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica1/isokann_rs_runs/isokann_random_search_1.py", line 44, in <module>
+    D0 = pt.load(out_trajectories1 + 'PWDistances_0_40f.pt', map_location=device)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/serialization.py", line 1479, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/serialization.py", line 759, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/serialization.py", line 740, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/PWDistances_0_40f.pt'

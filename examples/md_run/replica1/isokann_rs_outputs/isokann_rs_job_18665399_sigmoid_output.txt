@@ -1,0 +1,614 @@
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
+
+cuda
+torch.Size([240, 10, 46056])
+torch.Size([240, 46056])
+ 
+Nepochs = 120
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0006666666666666668
+Weight decay = 0.0005718571428571429
+Batch size = 300
+Momentum = 0.8925
+Patience = 4
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 11:44:15,148 Nepochs=120 nodes=[46056  8192  4096   512    64     1] lr=0.0006666666666666668 wd=0.0005718571428571429 bs=300 patience=4 act=sigmoid
+2025-10-21 11:44:15,423 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056 23028 11514     1]
+Learning rate = 0.0005555555555555556
+Weight decay = 0.0007145714285714287
+Batch size = 300
+Momentum = 0.7949999999999999
+Patience = 2
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 11:45:39,778 Nepochs=100 nodes=[46056 23028 11514     1] lr=0.0005555555555555556 wd=0.0007145714285714287 bs=300 patience=2 act=sigmoid
+2025-10-21 11:45:39,782 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056 23028 11514     1]
+Learning rate = 0.0007222222222222222
+Weight decay = 0.00014371428571428573
+Batch size = 500
+Momentum = 0.6
+Patience = 6
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 11:48:03,115 Nepochs=100 nodes=[46056 23028 11514     1] lr=0.0007222222222222222 wd=0.00014371428571428573 bs=500 patience=6 act=sigmoid
+2025-10-21 11:48:03,118 Validation loss: inf
+ 
+Nepochs = 130
+Nodes = [46056 23028 11514     1]
+Learning rate = 0.0007222222222222222
+Weight decay = 0.001
+Batch size = 100
+Momentum = 0.8925
+Patience = 7
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 11:51:38,804 Nepochs=130 nodes=[46056 23028 11514     1] lr=0.0007222222222222222 wd=0.001 bs=100 patience=7 act=sigmoid
+2025-10-21 11:51:38,808 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.001
+Weight decay = 0.0002864285714285715
+Batch size = 300
+Momentum = 0.7949999999999999
+Patience = 5
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 11:52:19,979 Nepochs=100 nodes=[46056  8192  4096   512    64     1] lr=0.001 wd=0.0002864285714285715 bs=300 patience=5 act=sigmoid
+2025-10-21 11:52:19,979 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0008888888888888889
+Weight decay = 1e-06
+Batch size = 500
+Momentum = 0.8925
+Patience = 5
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 11:53:40,339 Nepochs=140 nodes=[46056 15352  7676     1] lr=0.0008888888888888889 wd=1e-06 bs=500 patience=5 act=sigmoid
+2025-10-21 11:53:40,348 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056 23028 11514     1]
+Learning rate = 0.0008333333333333334
+Weight decay = 1e-06
+Batch size = 200
+Momentum = 0.99
+Patience = 3
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 11:55:20,415 Nepochs=100 nodes=[46056 23028 11514     1] lr=0.0008333333333333334 wd=1e-06 bs=200 patience=3 act=sigmoid
+2025-10-21 11:55:20,895 Validation loss: inf
+ 
+Nepochs = 130
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0009444444444444445
+Weight decay = 0.00014371428571428573
+Batch size = 100
+Momentum = 0.6
+Patience = 6
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 11:56:22,210 Nepochs=130 nodes=[46056  8192  4096   512    64     1] lr=0.0009444444444444445 wd=0.00014371428571428573 bs=100 patience=6 act=sigmoid
+2025-10-21 11:56:22,211 Validation loss: inf
+ 
+Nepochs = 110
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0005
+Weight decay = 0.0007145714285714287
+Batch size = 400
+Momentum = 0.6975
+Patience = 2
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 11:56:49,363 Nepochs=110 nodes=[46056  8192  4096   512    64     1] lr=0.0005 wd=0.0007145714285714287 bs=400 patience=2 act=sigmoid
+2025-10-21 11:56:49,363 Validation loss: inf
+ 
+Nepochs = 120
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0005555555555555556
+Weight decay = 1e-06
+Batch size = 500
+Momentum = 0.99
+Patience = 4
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 11:57:25,722 Nepochs=120 nodes=[46056  8192  4096   512    64     1] lr=0.0005555555555555556 wd=1e-06 bs=500 patience=4 act=sigmoid
+2025-10-21 11:57:25,722 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0009444444444444445
+Weight decay = 0.0004291428571428572
+Batch size = 100
+Momentum = 0.6975
+Patience = 4
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 11:58:56,452 Nepochs=140 nodes=[46056 15352  7676     1] lr=0.0009444444444444445 wd=0.0004291428571428572 bs=100 patience=4 act=sigmoid
+2025-10-21 11:58:56,454 Validation loss: inf
+ 
+Nepochs = 110
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0005
+Weight decay = 0.0002864285714285715
+Batch size = 100
+Momentum = 0.99
+Patience = 5
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 11:59:49,680 Nepochs=110 nodes=[46056  8192  4096   512    64     1] lr=0.0005 wd=0.0002864285714285715 bs=100 patience=5 act=sigmoid
+2025-10-21 11:59:49,680 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0005555555555555556
+Weight decay = 0.0007145714285714287
+Batch size = 500
+Momentum = 0.7949999999999999
+Patience = 2
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:00:42,793 Nepochs=100 nodes=[46056 15352  7676     1] lr=0.0005555555555555556 wd=0.0007145714285714287 bs=500 patience=2 act=sigmoid
+2025-10-21 12:00:42,793 Validation loss: inf
+ 
+Nepochs = 110
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0008333333333333334
+Weight decay = 0.0007145714285714287
+Batch size = 500
+Momentum = 0.6
+Patience = 2
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:01:35,995 Nepochs=110 nodes=[46056 15352  7676     1] lr=0.0008333333333333334 wd=0.0007145714285714287 bs=500 patience=2 act=sigmoid
+2025-10-21 12:01:36,012 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056 23028 11514     1]
+Learning rate = 0.0005
+Weight decay = 0.0004291428571428572
+Batch size = 300
+Momentum = 0.6
+Patience = 4
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:03:30,227 Nepochs=140 nodes=[46056 23028 11514     1] lr=0.0005 wd=0.0004291428571428572 bs=300 patience=4 act=sigmoid
+2025-10-21 12:03:30,247 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0008333333333333334
+Weight decay = 0.0008572857142857144
+Batch size = 300
+Momentum = 0.6
+Patience = 2
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:04:24,011 Nepochs=100 nodes=[46056 15352  7676     1] lr=0.0008333333333333334 wd=0.0008572857142857144 bs=300 patience=2 act=sigmoid
+2025-10-21 12:04:24,011 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0005
+Weight decay = 0.0005718571428571429
+Batch size = 200
+Momentum = 0.6
+Patience = 3
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:04:55,941 Nepochs=140 nodes=[46056  8192  4096   512    64     1] lr=0.0005 wd=0.0005718571428571429 bs=200 patience=3 act=sigmoid
+2025-10-21 12:04:55,943 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056 15352     1]
+Learning rate = 0.0007222222222222222
+Weight decay = 1e-06
+Batch size = 100
+Momentum = 0.6
+Patience = 3
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:06:00,820 Nepochs=140 nodes=[46056 15352     1] lr=0.0007222222222222222 wd=1e-06 bs=100 patience=3 act=sigmoid
+2025-10-21 12:06:00,820 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0007222222222222222
+Weight decay = 0.0008572857142857144
+Batch size = 400
+Momentum = 0.99
+Patience = 3
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:06:32,596 Nepochs=100 nodes=[46056  8192  4096   512    64     1] lr=0.0007222222222222222 wd=0.0008572857142857144 bs=400 patience=3 act=sigmoid
+2025-10-21 12:06:32,597 Validation loss: inf
+ 
+Nepochs = 130
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0006666666666666668
+Weight decay = 0.0007145714285714287
+Batch size = 500
+Momentum = 0.6
+Patience = 2
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:07:26,257 Nepochs=130 nodes=[46056 15352  7676     1] lr=0.0006666666666666668 wd=0.0007145714285714287 bs=500 patience=2 act=sigmoid
+2025-10-21 12:07:26,257 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0006111111111111111
+Weight decay = 0.0004291428571428572
+Batch size = 500
+Momentum = 0.99
+Patience = 5
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:08:47,033 Nepochs=140 nodes=[46056 15352  7676     1] lr=0.0006111111111111111 wd=0.0004291428571428572 bs=500 patience=5 act=sigmoid
+2025-10-21 12:08:47,034 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0006666666666666668
+Weight decay = 0.0004291428571428572
+Batch size = 500
+Momentum = 0.99
+Patience = 2
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:09:14,098 Nepochs=140 nodes=[46056  8192  4096   512    64     1] lr=0.0006666666666666668 wd=0.0004291428571428572 bs=500 patience=2 act=sigmoid
+2025-10-21 12:09:14,098 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056 15352     1]
+Learning rate = 0.0008888888888888889
+Weight decay = 0.0004291428571428572
+Batch size = 400
+Momentum = 0.99
+Patience = 6
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:10:30,062 Nepochs=100 nodes=[46056 15352     1] lr=0.0008888888888888889 wd=0.0004291428571428572 bs=400 patience=6 act=sigmoid
+2025-10-21 12:10:30,064 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0006666666666666668
+Weight decay = 1e-06
+Batch size = 500
+Momentum = 0.8925
+Patience = 7
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:11:20,579 Nepochs=100 nodes=[46056  8192  4096   512    64     1] lr=0.0006666666666666668 wd=1e-06 bs=500 patience=7 act=sigmoid
+2025-10-21 12:11:20,579 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0005555555555555556
+Weight decay = 0.00014371428571428573
+Batch size = 300
+Momentum = 0.99
+Patience = 4
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:11:56,931 Nepochs=100 nodes=[46056  8192  4096   512    64     1] lr=0.0005555555555555556 wd=0.00014371428571428573 bs=300 patience=4 act=sigmoid
+2025-10-21 12:11:56,932 Validation loss: inf
+ 
+Nepochs = 130
+Nodes = [46056 23028 11514     1]
+Learning rate = 0.001
+Weight decay = 0.00014371428571428573
+Batch size = 100
+Momentum = 0.6975
+Patience = 2
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:13:36,987 Nepochs=130 nodes=[46056 23028 11514     1] lr=0.001 wd=0.00014371428571428573 bs=100 patience=2 act=sigmoid
+2025-10-21 12:13:36,988 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056 15352     1]
+Learning rate = 0.001
+Weight decay = 0.0004291428571428572
+Batch size = 300
+Momentum = 0.8925
+Patience = 6
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:14:52,887 Nepochs=100 nodes=[46056 15352     1] lr=0.001 wd=0.0004291428571428572 bs=300 patience=6 act=sigmoid
+2025-10-21 12:14:52,889 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056 23028 11514     1]
+Learning rate = 0.0009444444444444445
+Weight decay = 0.0005718571428571429
+Batch size = 100
+Momentum = 0.99
+Patience = 5
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:17:38,303 Nepochs=100 nodes=[46056 23028 11514     1] lr=0.0009444444444444445 wd=0.0005718571428571429 bs=100 patience=5 act=sigmoid
+2025-10-21 12:17:38,305 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0005555555555555556
+Weight decay = 0.001
+Batch size = 400
+Momentum = 0.7949999999999999
+Patience = 3
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:18:40,527 Nepochs=140 nodes=[46056 15352  7676     1] lr=0.0005555555555555556 wd=0.001 bs=400 patience=3 act=sigmoid
+2025-10-21 12:18:40,527 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056 23028 11514     1]
+Learning rate = 0.0007777777777777778
+Weight decay = 0.0007145714285714287
+Batch size = 400
+Momentum = 0.99
+Patience = 5
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:20:49,149 Nepochs=100 nodes=[46056 23028 11514     1] lr=0.0007777777777777778 wd=0.0007145714285714287 bs=400 patience=5 act=sigmoid
+2025-10-21 12:20:49,150 Validation loss: inf
+ 
+Nepochs = 110
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0007222222222222222
+Weight decay = 1e-06
+Batch size = 100
+Momentum = 0.6975
+Patience = 5
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:22:34,007 Nepochs=110 nodes=[46056 15352  7676     1] lr=0.0007222222222222222 wd=1e-06 bs=100 patience=5 act=sigmoid
+2025-10-21 12:22:34,009 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056 15352     1]
+Learning rate = 0.0006666666666666668
+Weight decay = 0.0002864285714285715
+Batch size = 400
+Momentum = 0.7949999999999999
+Patience = 6
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:23:50,058 Nepochs=140 nodes=[46056 15352     1] lr=0.0006666666666666668 wd=0.0002864285714285715 bs=400 patience=6 act=sigmoid
+2025-10-21 12:23:50,059 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056 23028 11514     1]
+Learning rate = 0.0005555555555555556
+Weight decay = 0.001
+Batch size = 200
+Momentum = 0.6975
+Patience = 3
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:25:31,044 Nepochs=100 nodes=[46056 23028 11514     1] lr=0.0005555555555555556 wd=0.001 bs=200 patience=3 act=sigmoid
+2025-10-21 12:25:31,571 Validation loss: inf
+ 
+Nepochs = 130
+Nodes = [46056 15352     1]
+Learning rate = 0.0008333333333333334
+Weight decay = 1e-06
+Batch size = 200
+Momentum = 0.99
+Patience = 4
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:26:32,837 Nepochs=130 nodes=[46056 15352     1] lr=0.0008333333333333334 wd=1e-06 bs=200 patience=4 act=sigmoid
+2025-10-21 12:26:32,837 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056 23028 11514     1]
+Learning rate = 0.0006666666666666668
+Weight decay = 0.0002864285714285715
+Batch size = 100
+Momentum = 0.99
+Patience = 3
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:28:34,016 Nepochs=140 nodes=[46056 23028 11514     1] lr=0.0006666666666666668 wd=0.0002864285714285715 bs=100 patience=3 act=sigmoid
+2025-10-21 12:28:34,018 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0007777777777777778
+Weight decay = 1e-06
+Batch size = 300
+Momentum = 0.8925
+Patience = 7
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:29:24,970 Nepochs=140 nodes=[46056  8192  4096   512    64     1] lr=0.0007777777777777778 wd=1e-06 bs=300 patience=7 act=sigmoid
+2025-10-21 12:29:24,975 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056 15352     1]
+Learning rate = 0.0006111111111111111
+Weight decay = 0.0005718571428571429
+Batch size = 200
+Momentum = 0.7949999999999999
+Patience = 5
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:30:33,668 Nepochs=100 nodes=[46056 15352     1] lr=0.0006111111111111111 wd=0.0005718571428571429 bs=200 patience=5 act=sigmoid
+2025-10-21 12:30:33,672 Validation loss: inf
+ 
+Nepochs = 120
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0006111111111111111
+Weight decay = 0.001
+Batch size = 400
+Momentum = 0.8925
+Patience = 5
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:31:14,680 Nepochs=120 nodes=[46056  8192  4096   512    64     1] lr=0.0006111111111111111 wd=0.001 bs=400 patience=5 act=sigmoid
+2025-10-21 12:31:14,680 Validation loss: inf
+ 
+Nepochs = 120
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.001
+Weight decay = 0.0007145714285714287
+Batch size = 300
+Momentum = 0.6
+Patience = 6
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:32:44,608 Nepochs=120 nodes=[46056 15352  7676     1] lr=0.001 wd=0.0007145714285714287 bs=300 patience=6 act=sigmoid
+2025-10-21 12:32:44,610 Validation loss: inf
+ 
+Nepochs = 110
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0008888888888888889
+Weight decay = 0.0007145714285714287
+Batch size = 200
+Momentum = 0.6975
+Patience = 6
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:33:30,716 Nepochs=110 nodes=[46056  8192  4096   512    64     1] lr=0.0008888888888888889 wd=0.0007145714285714287 bs=200 patience=6 act=sigmoid
+2025-10-21 12:33:30,716 Validation loss: inf
+ 
+Nepochs = 110
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0008888888888888889
+Weight decay = 0.0008572857142857144
+Batch size = 100
+Momentum = 0.6975
+Patience = 7
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:34:39,633 Nepochs=110 nodes=[46056  8192  4096   512    64     1] lr=0.0008888888888888889 wd=0.0008572857142857144 bs=100 patience=7 act=sigmoid
+2025-10-21 12:34:39,635 Validation loss: inf
+ 
+Nepochs = 120
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0007777777777777778
+Weight decay = 0.00014371428571428573
+Batch size = 200
+Momentum = 0.8925
+Patience = 2
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:35:32,844 Nepochs=120 nodes=[46056 15352  7676     1] lr=0.0007777777777777778 wd=0.00014371428571428573 bs=200 patience=2 act=sigmoid
+2025-10-21 12:35:32,850 Validation loss: inf
+ 
+Nepochs = 130
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0008333333333333334
+Weight decay = 0.001
+Batch size = 500
+Momentum = 0.6
+Patience = 4
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:36:09,215 Nepochs=130 nodes=[46056  8192  4096   512    64     1] lr=0.0008333333333333334 wd=0.001 bs=500 patience=4 act=sigmoid
+2025-10-21 12:36:09,772 Validation loss: inf
+ 
+Nepochs = 120
+Nodes = [46056 15352     1]
+Learning rate = 0.0006111111111111111
+Weight decay = 0.0004291428571428572
+Batch size = 200
+Momentum = 0.6975
+Patience = 4
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:37:10,902 Nepochs=120 nodes=[46056 15352     1] lr=0.0006111111111111111 wd=0.0004291428571428572 bs=200 patience=4 act=sigmoid
+2025-10-21 12:37:10,902 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056 15352     1]
+Learning rate = 0.0005
+Weight decay = 0.0004291428571428572
+Batch size = 500
+Momentum = 0.6
+Patience = 4
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:38:11,956 Nepochs=140 nodes=[46056 15352     1] lr=0.0005 wd=0.0004291428571428572 bs=500 patience=4 act=sigmoid
+2025-10-21 12:38:11,957 Validation loss: inf
+ 
+Nepochs = 120
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0005555555555555556
+Weight decay = 0.0005718571428571429
+Batch size = 100
+Momentum = 0.7949999999999999
+Patience = 6
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:39:12,220 Nepochs=120 nodes=[46056  8192  4096   512    64     1] lr=0.0005555555555555556 wd=0.0005718571428571429 bs=100 patience=6 act=sigmoid
+2025-10-21 12:39:12,220 Validation loss: inf
+ 
+Nepochs = 100
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0007222222222222222
+Weight decay = 1e-06
+Batch size = 500
+Momentum = 0.6975
+Patience = 3
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:40:14,807 Nepochs=100 nodes=[46056 15352  7676     1] lr=0.0007222222222222222 wd=1e-06 bs=500 patience=3 act=sigmoid
+2025-10-21 12:40:14,809 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0006666666666666668
+Weight decay = 0.001
+Batch size = 300
+Momentum = 0.8925
+Patience = 4
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:41:26,658 Nepochs=140 nodes=[46056 15352  7676     1] lr=0.0006666666666666668 wd=0.001 bs=300 patience=4 act=sigmoid
+2025-10-21 12:41:26,659 Validation loss: inf
+ 
+Nepochs = 130
+Nodes = [46056 15352  7676     1]
+Learning rate = 0.0005555555555555556
+Weight decay = 0.00014371428571428573
+Batch size = 200
+Momentum = 0.99
+Patience = 7
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:43:06,104 Nepochs=130 nodes=[46056 15352  7676     1] lr=0.0005555555555555556 wd=0.00014371428571428573 bs=200 patience=7 act=sigmoid
+2025-10-21 12:43:06,126 Validation loss: inf
+ 
+Nepochs = 120
+Nodes = [46056  8192  4096   512    64     1]
+Learning rate = 0.0008888888888888889
+Weight decay = 0.0004291428571428572
+Batch size = 400
+Momentum = 0.99
+Patience = 4
+Activation function = sigmoid
+Validation loss: inf
+2025-10-21 12:43:42,569 Nepochs=120 nodes=[46056  8192  4096   512    64     1] lr=0.0008888888888888889 wd=0.0004291428571428572 bs=400 patience=4 act=sigmoid
+2025-10-21 12:43:42,569 Validation loss: inf
+The best hyperparameters are: None
+The best validation loss is: inf

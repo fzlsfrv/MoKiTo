@@ -1,0 +1,8 @@
+  0%|          | 0/500 [00:00<?, ?it/s]  0%|          | 0/500 [00:15<?, ?it/s]
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica0/isokann_runs/isokann_1.py", line 133, in <module>
+    train_LOSS, val_LOSS, best_loss, convergence, xtrema = power_method(D0_n,
+                                                           ^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 340, in power_method
+    chi_xtrema.squeeze(-1)
+ValueError: cannot select an axis to squeeze out which has size not equal to one

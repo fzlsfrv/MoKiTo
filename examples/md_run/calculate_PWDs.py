@@ -14,7 +14,7 @@ import os
 sys.path.append(os.path.abspath('../../'))
 
 from src.useful_functions import *
-from src.openmm.PWDs_module_4 import generate_PWDistances_torch
+from src.openmm.PWDs_module_1 import generate_PWDistances_torch
 
 # For reproducibility
 np.random.seed(0)

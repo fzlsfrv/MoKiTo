@@ -1,0 +1,23 @@
+  0%|          | 0/50 [00:00<?, ?it/s]  2%|▏         | 1/50 [08:06<6:37:37, 486.89s/it]  4%|▍         | 2/50 [1:03:16<28:37:39, 2147.08s/it]  6%|▌         | 3/50 [1:14:55<19:24:13, 1486.25s/it]  8%|▊         | 4/50 [1:28:15<15:31:43, 1215.29s/it] 10%|█         | 5/50 [2:16:09<22:40:04, 1813.44s/it] 12%|█▏        | 6/50 [2:45:22<21:54:43, 1792.81s/it] 14%|█▍        | 7/50 [3:40:58<27:26:28, 2297.41s/it] 16%|█▌        | 8/50 [5:09:27<37:59:08, 3255.91s/it] 18%|█▊        | 9/50 [6:06:31<37:40:44, 3308.41s/it] 20%|██        | 10/50 [7:00:52<36:35:59, 3293.98s/it] 22%|██▏       | 11/50 [7:36:45<31:54:01, 2944.67s/it] 24%|██▍       | 12/50 [8:01:15<26:20:49, 2496.04s/it] 26%|██▌       | 13/50 [8:23:30<22:02:19, 2144.30s/it] 28%|██▊       | 14/50 [8:50:47<19:54:46, 1991.28s/it] 28%|██▊       | 14/50 [8:50:48<22:44:57, 2274.92s/it]
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica1/isokann_rs_runs/isokann_random_search_1.py", line 94, in <module>
+    best_hyperparams, best_val_loss  = random_search(D0_n,
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 213, in random_search
+    train_losses, val_losses, val_loss, convergence, xtrema = power_method(X, Y,
+                                                              ^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 291, in power_method
+    old_chi =  f_NN(pt_x0).cpu().detach().numpy()
+               ^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/src/isokann/modules3_3.py", line 67, in forward
+    X = self.activation(layer(X))
+        ^^^^^^^^^^^^^^^
+  File "/scratch/htc/fsafarov/openmm_ff/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1940, in __getattr__
+    raise AttributeError(
+AttributeError: 'NeuralNetwork' object has no attribute 'activation'. Did you mean: 'activation2'?

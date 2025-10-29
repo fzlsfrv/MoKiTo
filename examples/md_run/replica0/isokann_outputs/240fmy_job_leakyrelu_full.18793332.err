@@ -1,0 +1,2 @@
+/var/spool/slurmd/htc-gpu023/job18793332/slurm_script: Zeile 17: 60471 Getötet                python isokann_2.py
+slurmstepd-htc-gpu023: error: Detected 1 oom_kill event in StepId=18793332.batch. Some of the step tasks have been OOM Killed.

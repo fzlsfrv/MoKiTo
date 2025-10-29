@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --job-name=my_job              # Name of the job
-#SBATCH --output=isokann_rs_job_output_1.txt     # Standard output and error log
+#SBATCH --job-name=rs_sigmoid              # Name of the job
+#SBATCH --output=../isokann_rs_outputs/isokann_rs_job_%j_sigmoid_output.txt     # Standard output and error log
+#SBATCH --err=../isokann_rs_outputs/%x.%j.err
 #SBATCH --ntasks=1                     # Run on a single task
 #SBATCH --cpus-per-task=32             # Number of CPU cores per task
-#SBATCH --nodelist=htc-gpu023
 #SBATCH --mem=80G                      # Total memory
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:a100:1                   # replace with number of GPUs required

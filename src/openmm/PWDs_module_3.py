@@ -140,8 +140,7 @@ def generate_PWDistances_torch(
         d0 = np.zeros((Ndims,int(Npoints//25)))
         for i in tqdm(range(0, int(Npoints), 25)):
             traj.trajectory[i]
-            atoms   =  traj.atoms[sel_idx]
-            atom_coords = atoms.positions
+            atom_coords = traj.atoms.positions
             box_ = traj.trajectory.ts.dimensions
             d0[:, int(i//25)] = self_distance_array(atom_coords, box = box_)
         
@@ -160,6 +159,7 @@ def generate_PWDistances_torch(
     
     # Load one trajectory to calculate number of frames
     fs_folders = multiple_dirs(out_final_states, fetch_files=False)
+    print(fs_folders)
     print("I am creating the tensor with the final states...")
     xt         =  mda.Universe(inp_dir + pdbfile_water, fs_folders[0] + "xt_0_r0.dcd")
 
@@ -177,26 +177,23 @@ def generate_PWDistances_torch(
                     
             for j in range(Nfinpoints):
             
-                                
                 
                 dcd_path = os.path.join(fs_folders[f], f"xt_{i}_r{j}_aligned.dcd")
                 xt      =  mda.Universe(os.path.join(inp_dir, pdbfile_water), dcd_path)
                 
                 for k in range(Ntimesteps):
+                    xt.trajectory[k]
+                    
                     if BB == True:
-                        xt.trajectory[k]
                         atoms   = xt.atoms[sel_idx]
                         atom_coords = atoms.positions
-                        box_ = traj.trajectory.ts.dimensions
-                        dt         =  np.transpose(self_distance_array(atom_coords, box = box_))
-                    else:
-                        xt.trajectory[k]
-                        atom_coords = xt.atoms.positions
-                        box_ = traj.trajectory.ts.dimensions
-                        dt         =  np.transpose(self_distance_array(atom_coords, box = box_))
-                        
-    
 
+                    else:
+                        atom_coords = xt.atoms.positions
+                    
+                    atoms   = xt.atoms[sel_idx]
+                    box_ = xt.trajectory.ts.dimensions
+                    dt         =  np.transpose(self_distance_array(atom_coords, box = box_))
                 
                     Dt[k,int(d*f + (i//25)),j,:]  =  pt.tensor(dt, dtype=pt.float32, device=device)
                                 

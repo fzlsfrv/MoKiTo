@@ -1,0 +1,6 @@
+/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica1/isokann_rs_runs/isokann_random_search_1.py:74: SyntaxWarning: 'tuple' object is not callable; perhaps you missed a comma?
+  (46056, 4096, 1024, 256, 1)
+Traceback (most recent call last):
+  File "/scratch/htc/fsafarov/2cm2_simulation/MoKiTo/examples/md_run/replica1/isokann_rs_runs/isokann_random_search_1.py", line 74, in <module>
+    (46056, 4096, 1024, 256, 1)
+TypeError: 'tuple' object is not callable

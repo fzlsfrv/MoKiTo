@@ -1,0 +1,189 @@
+Created variables:
+inp_dir = /scratch/htc/fsafarov/2cm2_simulation/md2/input/
+out_trajectories1 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/
+out_trajectories2 = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/
+out_initial_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/initial_states/
+out_final_states = /scratch/htc/fsafarov/2cm2_simulation/md2/output/trajectories/openmm_files/final_states/
+out_isokann = /scratch/htc/fsafarov/2cm2_simulation/md2/output/isokann/
+out_mokito = /scratch/htc/fsafarov/2cm2_simulation/md2/output/mokito/
+
+cuda
+torch.Size([6000, 10, 46056])
+torch.Size([6000, 46056])
+ 
+Nepochs = 70
+Nodes = [46056  2048   512     1]
+Learning rate = 0.003
+Weight decay = 3.5000000000000004e-05
+Batch size = 256
+Momentum = 0.9199999999999999
+Patience = 6
+Activation function = gelu
+Validation loss: inf
+2025-10-28 23:40:35,107 Nepochs=70 nodes=[46056  2048   512     1] lr=0.003 wd=3.5000000000000004e-05 bs=256 patience=6 act=gelu
+2025-10-28 23:40:35,349 Validation loss: inf
+ 
+Nepochs = 120
+Nodes = [46056 11514  5757     1]
+Learning rate = 0.0045000000000000005
+Weight decay = 6.1000000000000005e-05
+Batch size = 192
+Momentum = 0.9199999999999999
+Patience = 7
+Activation function = sigmoid
+Validation loss: inf
+2025-10-29 00:35:44,019 Nepochs=120 nodes=[46056 11514  5757     1] lr=0.0045000000000000005 wd=6.1000000000000005e-05 bs=192 patience=7 act=sigmoid
+2025-10-29 00:35:44,553 Validation loss: inf
+ 
+Nepochs = 60
+Nodes = [46056  2048   512     1]
+Learning rate = 0.003
+Weight decay = 6.1000000000000005e-05
+Batch size = 256
+Momentum = 0.885
+Patience = 5
+Activation function = leakyrelu
+Validation loss: tensor(0.0003, device='cuda:0')
+2025-10-29 00:47:24,400 Nepochs=60 nodes=[46056  2048   512     1] lr=0.003 wd=6.1000000000000005e-05 bs=256 patience=5 act=leakyrelu
+2025-10-29 00:47:24,416 Validation loss: 0.000277
+ 
+Nepochs = 70
+Nodes = [46056  2048   512     1]
+Learning rate = 0.003
+Weight decay = 0.0001
+Batch size = 256
+Momentum = 0.85
+Patience = 6
+Activation function = gelu
+Validation loss: tensor(0.0002, device='cuda:0')
+2025-10-29 01:00:44,323 Nepochs=70 nodes=[46056  2048   512     1] lr=0.003 wd=0.0001 bs=256 patience=6 act=gelu
+2025-10-29 01:00:44,325 Validation loss: 0.000159
+ 
+Nepochs = 140
+Nodes = [46056  7676  3838     1]
+Learning rate = 0.003
+Weight decay = 8.7e-05
+Batch size = 320
+Momentum = 0.85
+Patience = 5
+Activation function = sigmoid
+Validation loss: tensor(0.0442, device='cuda:0')
+2025-10-29 01:48:38,093 Nepochs=140 nodes=[46056  7676  3838     1] lr=0.003 wd=8.7e-05 bs=320 patience=5 act=sigmoid
+2025-10-29 01:48:38,355 Validation loss: 0.044166
+ 
+Nepochs = 110
+Nodes = [46056  7676  3838     1]
+Learning rate = 0.005
+Weight decay = 8.7e-05
+Batch size = 448
+Momentum = 0.99
+Patience = 7
+Activation function = sigmoid
+Validation loss: inf
+2025-10-29 02:17:50,689 Nepochs=110 nodes=[46056  7676  3838     1] lr=0.005 wd=8.7e-05 bs=448 patience=7 act=sigmoid
+2025-10-29 02:17:51,118 Validation loss: inf
+ 
+Nepochs = 130
+Nodes = [46056 11514  5757     1]
+Learning rate = 0.005
+Weight decay = 4.8e-05
+Batch size = 256
+Momentum = 0.85
+Patience = 8
+Activation function = gelu
+Validation loss: inf
+2025-10-29 03:13:26,921 Nepochs=130 nodes=[46056 11514  5757     1] lr=0.005 wd=4.8e-05 bs=256 patience=8 act=gelu
+2025-10-29 03:13:27,404 Validation loss: inf
+ 
+Nepochs = 60
+Nodes = [46056 11514  5757     1]
+Learning rate = 0.001
+Weight decay = 7.400000000000001e-05
+Batch size = 448
+Momentum = 0.99
+Patience = 9
+Activation function = gelu
+Validation loss: tensor(0.0003, device='cuda:0')
+2025-10-29 04:41:55,607 Nepochs=60 nodes=[46056 11514  5757     1] lr=0.001 wd=7.400000000000001e-05 bs=448 patience=9 act=gelu
+2025-10-29 04:41:55,625 Validation loss: 0.000345
+ 
+Nepochs = 140
+Nodes = [46056 11514  5757     1]
+Learning rate = 0.005
+Weight decay = 3.5000000000000004e-05
+Batch size = 448
+Momentum = 0.99
+Patience = 9
+Activation function = relu
+Validation loss: inf
+2025-10-29 05:38:58,850 Nepochs=140 nodes=[46056 11514  5757     1] lr=0.005 wd=3.5000000000000004e-05 bs=448 patience=9 act=relu
+2025-10-29 05:38:59,461 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056 11514  5757     1]
+Learning rate = 0.0045000000000000005
+Weight decay = 6.1000000000000005e-05
+Batch size = 448
+Momentum = 0.9199999999999999
+Patience = 9
+Activation function = sigmoid
+Validation loss: inf
+2025-10-29 06:33:20,905 Nepochs=140 nodes=[46056 11514  5757     1] lr=0.0045000000000000005 wd=6.1000000000000005e-05 bs=448 patience=9 act=sigmoid
+2025-10-29 06:33:21,144 Validation loss: inf
+ 
+Nepochs = 110
+Nodes = [46056  7676  3838     1]
+Learning rate = 0.004
+Weight decay = 3.5000000000000004e-05
+Batch size = 192
+Momentum = 0.955
+Patience = 7
+Activation function = leakyrelu
+Validation loss: inf
+2025-10-29 07:09:13,541 Nepochs=110 nodes=[46056  7676  3838     1] lr=0.004 wd=3.5000000000000004e-05 bs=192 patience=7 act=leakyrelu
+2025-10-29 07:09:13,764 Validation loss: inf
+ 
+Nepochs = 90
+Nodes = [46056  4096     1]
+Learning rate = 0.005
+Weight decay = 9e-06
+Batch size = 128
+Momentum = 0.9199999999999999
+Patience = 9
+Activation function = leakyrelu
+Validation loss: inf
+2025-10-29 07:33:43,709 Nepochs=90 nodes=[46056  4096     1] lr=0.005 wd=9e-06 bs=128 patience=9 act=leakyrelu
+2025-10-29 07:33:43,710 Validation loss: inf
+ 
+Nepochs = 80
+Nodes = [46056  2048   512     1]
+Learning rate = 0.0005
+Weight decay = 3.5000000000000004e-05
+Batch size = 448
+Momentum = 0.885
+Patience = 6
+Activation function = sigmoid
+Validation loss: tensor(0.0022, device='cuda:0')
+2025-10-29 07:55:58,326 Nepochs=80 nodes=[46056  2048   512     1] lr=0.0005 wd=3.5000000000000004e-05 bs=448 patience=6 act=sigmoid
+2025-10-29 07:55:58,649 Validation loss: 0.002157
+ 
+Nepochs = 80
+Nodes = [46056  7676  3838     1]
+Learning rate = 0.004
+Weight decay = 7.400000000000001e-05
+Batch size = 320
+Momentum = 0.885
+Patience = 5
+Activation function = relu
+Validation loss: inf
+2025-10-29 08:23:16,334 Nepochs=80 nodes=[46056  7676  3838     1] lr=0.004 wd=7.400000000000001e-05 bs=320 patience=5 act=relu
+2025-10-29 08:23:16,335 Validation loss: inf
+ 
+Nepochs = 140
+Nodes = [46056  4096     1]
+Learning rate = 0.0045000000000000005
+Weight decay = 0.0001
+Batch size = 384
+Momentum = 0.955
+Patience = 6
+Activation function = tanh

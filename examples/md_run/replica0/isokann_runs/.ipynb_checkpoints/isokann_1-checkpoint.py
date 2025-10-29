@@ -30,7 +30,7 @@ np.random.seed(0)
 pt.manual_seed(0)
 
 # Read directory paths
-read_dirs_paths('../../dir_paths.txt', globals())
+read_dirs_paths('../../dir_paths_.txt', globals())
 
 device = pt.device("cuda" if pt.cuda.is_available() else "cpu")
 print("")
@@ -40,30 +40,32 @@ print(device)
 
 
 # Load initial and final states and convert to torch
-D0 = pt.load(out_trajectories1 + 'PWDistances_0_40f-full.pt', map_location=device)
-DT = pt.load(out_trajectories1 + 'PWDistances_t_40f-full.pt', map_location=device)
+# D0 = pt.load(out_trajectories1 + 'PWDistances_0_half.pt', map_location=device)
+# DT = pt.load(out_trajectories1 + 'PWDistances_t_half.pt', map_location=device)
 
-R0 = np.loadtxt(out_trajectories1 + 'R0.txt')
+D0 = pt.load(out_trajectories1 + 'PWDistances_0_full_1.pt', map_location=device)
+Dt = pt.load(out_trajectories1 + 'PWDistances_t_full_frame_9.pt', map_location=device)
+
 
 x0_mean = D0.mean(dim=-1, keepdim=True) 
 x0_std = D0.std(dim=-1, keepdim=True)
-D0_n = (D0 - x0_mean) / (x0_std + 1e-8)
+D0_n = abs(D0 - x0_mean) / (x0_std + 1e-8)
 
-frame = 9
+# frame = 9
 
-Dt = DT[frame,:,:,:]
+# Dt = DT[frame,:,:,:]
 
 xt_mean = Dt.mean(dim=-1, keepdim=True) 
 xt_std = Dt.std(dim=-1, keepdim=True)
-Dt_n = (Dt - xt_mean) / (xt_std + 1e-8)
+Dt_n = abs(Dt - xt_mean) / (xt_std + 1e-8)
 
 
 
 Npoints = D0.shape[0]
 Ndims   = D0.shape[1]
 
-print(Dt.shape)
-print(D0.shape)
+print(Dt_n.shape)
+print(D0_n.shape)
 
 
 
@@ -81,21 +83,56 @@ print(D0.shape)
 
 
 # In[5]:
+# best_hyperparams = { 
+#                     'Nepochs': 20, 
+#                     'nodes': np.array([46056, 23028, 11514, 5757, 2878, 1439, 1]), 
+#                     'learning_rate':0.0001, 
+#                     'weight_decay':3.727593720314938e-06, 
+#                     'batch_size':200, 
+#                     'momentum':0.6, 
+#                     'patience':2, 
+#                     'act_fun': 'leakyrelu' 
+# }
 
+# best_hyperparams = {
+#                     'Nepochs': 20,
+#                     'nodes': np.array([46056, 16384, 8192, 4096, 1]),
+#                     'learning_rate':9e-4,
+#                     'weight_decay':5e-6,
+#                     'batch_size':200,
+#                     'momentum':0.8,
+#                     'patience':8,
+#                     'act_fun': 'sigmoid'
+#     }
+
+
+# =============================================================================
+# best_hyperparams = {
+#                     'Nepochs': 80,
+#                     'nodes': np.array([46056, 4096, 1024, 256, 1]),
+#                     'learning_rate':0.001,
+#                     'weight_decay':1e-5,
+#                     'batch_size':256,
+#                     'momentum':0.9,
+#                     'patience':10,
+#                     'act_fun': 'leakyrelu'
+#     }
+# 
+# =============================================================================
 
 best_hyperparams = {
-                    'Nepochs': 20,
-                    'nodes': np.array([46056, 23028, 11514,  5757,  2878,  1439,     1]),
-                    'learning_rate':0.0001,
-                    'weight_decay':3.727593720314938e-06,
-                    'batch_size':200,
-                    'momentum':0.6,
-                    'patience':2,
+                    'Nepochs': 130,
+                    'nodes': np.array([46056,  4096,  1024,   256,   1]),
+                    'learning_rate':0.004,
+                    'weight_decay':3.5000000000000004e-05,
+                    'batch_size':448,
+                    'momentum':0.9199999999999999,
+                    'patience':8,
                     'act_fun': 'leakyrelu'
     }
 
 # Power method iterations
-Niters    = 600
+Niters    = 400
 
 # NN hyperparameters
 Nepochs   = best_hyperparams['Nepochs']
@@ -117,8 +154,8 @@ f_NN = NeuralNetwork( Nodes = np.asarray(nodes), activation_function = act_fun )
 
 
 # Apply the power method using the best hyperparameters
-train_LOSS, val_LOSS, best_loss, convergence = power_method(D0,
-                                                            Dt,
+train_LOSS, val_LOSS, best_loss, convergence, xtrema = power_method(D0_n,
+                                                            Dt_n,
                                                             f_NN,
                                                             scale_and_shift,
                                                             Niters = Niters,
@@ -134,7 +171,7 @@ train_LOSS, val_LOSS, best_loss, convergence = power_method(D0,
                                                             loss ='full'
                                                                 )
 with pt.no_grad():    
-    chi  = f_NN(D0).cpu().detach().numpy()
+    chi  = f_NN(D0_n).cpu().detach().numpy()
 
 
 # In[5]:
@@ -147,10 +184,11 @@ with pt.no_grad():
 # In[6]:
 
 out_folder = get_latest(out_isokann, iso_outs=True, create_new=True)
-np.savetxt(os.path.join(out_folder,'val_LOSS.txt'), val_LOSS)
-np.savetxt(os.path.join(out_folder,'train_LOSS.txt'), train_LOSS)
-np.savetxt(os.path.join(out_folder,'chi0.txt'), chi)
-np.savetxt(os.path.join(out_folder,'convergence.txt'), convergence)
+np.savetxt(os.path.join(out_folder,'val_LOSS_lr.txt'), val_LOSS)
+np.savetxt(os.path.join(out_folder,'train_LOSS_lr.txt'), train_LOSS)
+np.savetxt(os.path.join(out_folder,'chi0_lr.txt'), chi)
+np.savetxt(os.path.join(out_folder,'convergence_lr.txt'), convergence)
+np.savetxt(os.path.join(out_folder,'chi_extrema_lr.txt'), xtrema)
 
 
 # Calculate propagated chi
